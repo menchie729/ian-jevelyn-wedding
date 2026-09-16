@@ -13,13 +13,62 @@ html,body{
   font-family:Georgia, 'Times New Roman', serif;
 }
 
-/* BACKGROUND — light purple same as original design */
+/* BACKGROUND */
 .bg{
   position:absolute;
   top:0;left:0;
   width:100%;height:100%;
   background:linear-gradient(135deg, #FDF8FF, #EDE4F7);
   z-index:0;
+}
+
+/* FLOWERS — 4 ka kilid, siguradong makita */
+.flower{
+  position:absolute;
+  width:130px;
+  height:130px;
+  z-index:6; /* mas taas kaysa frame para makita sa ibabaw */
+  pointer-events:none;
+}
+.flower-tl{
+  top:0;
+  left:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 25% 25%, #9B59B6 0%, #8E44AD 40%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 45% 20%, #B977D1 0%, #9B59B6 40%, transparent 70%),
+    radial-gradient(circle at 35% 40%, #F7DC6F 0%, #D4AF37 40%, transparent 60%),
+    radial-gradient(circle at 20% 35%, #fff 0%, transparent 50%);
+  clip-path:polygon(0 0, 70% 0, 70% 70%, 0 70%);
+}
+.flower-tr{
+  top:0;
+  right:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 75% 25%, #9B59B6 0%, #8E44AD 40%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 55% 20%, #B977D1 0%, #9B59B6 40%, transparent 70%),
+    radial-gradient(circle at 65% 40%, #F7DC6F 0%, #D4AF37 40%, transparent 60%),
+    radial-gradient(circle at 80% 35%, #fff 0%, transparent 50%);
+  clip-path:polygon(30% 0, 100% 0, 100% 70%, 30% 70%);
+}
+.flower-bl{
+  bottom:0;
+  left:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 25% 75%, #9B59B6 0%, #8E44AD 40%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 45% 80%, #B977D1 0%, #9B59B6 40%, transparent 70%),
+    radial-gradient(circle at 35% 60%, #F7DC6F 0%, #D4AF37 40%, transparent 60%),
+    radial-gradient(circle at 20% 65%, #fff 0%, transparent 50%);
+  clip-path:polygon(0 30%, 70% 30%, 70% 100%, 0 100%);
+}
+.flower-br{
+  bottom:0;
+  right:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 75% 75%, #9B59B6 0%, #8E44AD 40%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 55% 80%, #B977D1 0%, #9B59B6 40%, transparent 70%),
+    radial-gradient(circle at 65% 60%, #F7DC6F 0%, #D4AF37 40%, transparent 60%),
+    radial-gradient(circle at 80% 65%, #fff 0%, transparent 50%);
+  clip-path:polygon(30% 30%, 100% 30%, 100% 100%, 30% 100%);
 }
 
 /* GOLD BORDER FRAME */
@@ -38,203 +87,71 @@ html,body{
   z-index:2;
 }
 
-/* FLOWER DECORATIONS — 4 corners same as original */
-.flower{
-  position:absolute;
-  width:140px;height:140px;
-  z-index:3;
-  pointer-events:none;
-}
-.flower-tl{
-  top:0;left:0;
-  background:
-    radial-gradient(ellipse 50% 40% at 25% 25%, #9B59B6 0%, #8E44AD 40%, transparent 70%),
-    radial-gradient(ellipse 40% 50% at 45% 20%, #B977D1 0%, #9B59B6 40%, transparent 70%),
-    radial-gradient(circle at 35% 40%, #F7DC6F 0%, #D4AF37 40%, transparent 60%),
-    radial-gradient(circle at 20% 35%, #fff 0%, transparent 50%);
-  clip-path:polygon(0 0, 70% 0, 70% 70%, 0 70%);
-}
-.flower-tr{
-  top:0;right:0;
-  background:
-    radial-gradient(ellipse 50% 40% at 75% 25%, #9B59B6 0%, #8E44AD 40%, transparent 70%),
-    radial-gradient(ellipse 40% 50% at 55% 20%, #B977D1 0%, #9B59B6 40%, transparent 70%),
-    radial-gradient(circle at 65% 40%, #F7DC6F 0%, #D4AF37 40%, transparent 60%),
-    radial-gradient(circle at 80% 35%, #fff 0%, transparent 50%);
-  clip-path:polygon(30% 0, 100% 0, 100% 70%, 30% 70%);
-}
-.flower-bl{
-  bottom:0;left:0;
-  background:
-    radial-gradient(ellipse 50% 40% at 25% 75%, #9B59B6 0%, #8E44AD 40%, transparent 70%),
-    radial-gradient(ellipse 40% 50% at 45% 80%, #B977D1 0%, #9B59B6 40%, transparent 70%),
-    radial-gradient(circle at 35% 60%, #F7DC6F 0%, #D4AF37 40%, transparent 60%),
-    radial-gradient(circle at 20% 65%, #fff 0%, transparent 50%);
-  clip-path:polygon(0 30%, 70% 30%, 70% 100%, 0 100%);
-}
-.flower-br{
-  bottom:0;right:0;
-  background:
-    radial-gradient(ellipse 50% 40% at 75% 75%, #9B59B6 0%, #8E44AD 40%, transparent 70%),
-    radial-gradient(ellipse 40% 50% at 55% 80%, #B977D1 0%, #9B59B6 40%, transparent 70%),
-    radial-gradient(circle at 65% 60%, #F7DC6F 0%, #D4AF37 40%, transparent 60%),
-    radial-gradient(circle at 80% 65%, #fff 0%, transparent 50%);
-  clip-path:polygon(30% 30%, 100% 30%, 100% 100%, 30% 100%);
-}
-
-/* PHOTO AREA — dali ra nimo ilisan */
-.photo-container{
-  width:100%;
-  max-width:340px;
-  height:240px;
-  border-radius:8px;
-  border:2px solid #D4AF37;
-  overflow:hidden;
-  margin-bottom:18px;
-  background:#F6EEFF;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.photo-container img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-.photo-placeholder{
-  text-align:center;
-  color:#7D3C98;
-}
-.photo-placeholder span{font-size:3rem;display:block;margin-bottom:8px;}
-
-/* TEXT STYLES */
+/* CONTENT */
 .content{
   position:absolute;
   top:50%;left:50%;
   transform:translate(-50%,-50%);
   text-align:center;
-  z-index:4;
+  z-index:5;
   width:90%;
   max-width:480px;
 }
-.top-text{
-  font-size:0.9rem;
-  text-transform:uppercase;
-  letter-spacing:1.5px;
-  color:#6C3483;
-  margin-bottom:5px;
+.photo-container{
+  width:100%;max-width:340px;height:240px;
+  border-radius:8px;border:2px solid #D4AF37;
+  overflow:hidden;margin:0 auto 18px;
+  background:#F6EEFF;
+  display:flex;align-items:center;justify-content:center;
 }
-.invite-text{
-  font-size:0.95rem;
-  color:#6C3483;
-  margin-bottom:15px;
-}
+.photo-container img{width:100%;height:100%;object-fit:cover;}
+.photo-placeholder{color:#7D3C98;text-align:center;}
+.photo-placeholder span{font-size:3rem;display:block;margin-bottom:8px;}
+
 .names{
   font-size:clamp(2.4rem,8vw,3.4rem);
   color:#7D3C98;
-  font-style:italic;
-  font-weight:bold;
-  margin-bottom:5px;
-  line-height:1.2;
+  font-style:italic;font-weight:bold;
+  margin-bottom:5px;line-height:1.2;
 }
-.and{
-  font-size:1.3rem;
-  color:#D4AF37;
-  display:block;
-  margin:4px 0;
-}
-.divider{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
-  margin:15px 0;
-}
-.d-line{
-  width:70px;
-  height:1px;
-  background:linear-gradient(90deg,transparent,#D4AF37,transparent);
-}
-.d-heart{
-  width:12px;
-  height:12px;
-  background:#D4AF37;
-  transform:rotate(45deg);
-  border-radius:2px 0 0 0;
-}
-.details-row{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:15px;
-  margin:20px 0;
-}
-.detail-col{
-  flex:1;
-  min-width:110px;
-}
-.detail-icon{
-  font-size:1.1rem;
-  color:#D4AF37;
-  margin-bottom:4px;
-}
-.detail-text{
-  font-size:0.9rem;
-  color:#6C3483;
-  line-height:1.5;
-}
-.bottom-msg{
-  font-style:italic;
-  color:#6C3483;
-  margin-top:8px;
-  font-size:0.95rem;
-}
+.and{color:#D4AF37;display:block;margin:4px 0;font-size:1.3rem;}
+.divider{display:flex;align-items:center;justify-content:center;gap:10px;margin:15px 0;}
+.d-line{width:70px;height:1px;background:linear-gradient(90deg,transparent,#D4AF37,transparent);}
+.d-heart{width:12px;height:12px;background:#D4AF37;transform:rotate(45deg);border-radius:2px 0 0 0;}
+
+.top-text{font-size:0.9rem;text-transform:uppercase;letter-spacing:1.5px;color:#6C3483;margin-bottom:5px;}
+.invite-text{font-size:0.95rem;color:#6C3483;margin-bottom:15px;}
+.details-row{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin:20px 0;}
+.detail-col{flex:1;min-width:110px;}
+.detail-icon{font-size:1.1rem;color:#D4AF37;margin-bottom:4px;}
+.detail-text{font-size:0.9rem;color:#6C3483;line-height:1.5;}
+.bottom-msg{font-style:italic;color:#6C3483;margin-top:8px;font-size:0.95rem;}
 
 /* PAGES */
-.page{
-  position:absolute;
-  top:0;left:0;
-  width:100%;height:100%;
-  display:none;
-  z-index:1;
-}
+.page{position:absolute;top:0;left:0;width:100%;height:100%;display:none;z-index:1;}
 .page.active{display:block;}
 
 /* NAVIGATION */
-.nav{
-  position:absolute;
-  bottom:20px;
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:15px;
-  z-index:5;
-}
+.nav{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:15px;z-index:10;}
 .nav button{
   background:linear-gradient(135deg,#8E44AD,#D4AF37);
-  color:white;
-  border:none;
-  padding:10px 24px;
-  font-size:0.95rem;
-  border-radius:6px;
-  cursor:pointer;
-}
-.nav button:hover{
-  background:linear-gradient(135deg,#7D3C98,#C49A2F);
+  color:white;border:none;padding:10px 24px;
+  font-size:0.95rem;border-radius:6px;cursor:pointer;
 }
 </style>
 </head>
 <body>
 
-<!-- PAGE 1: WELCOME -->
+<!-- PAGE 1 -->
 <section class="page active" id="p1">
   <div class="bg"></div>
-  <div class="frame-outer"></div>
-  <div class="frame-inner"></div>
+  <!-- FLOWERS — una ibutang para sa ibabaw makita -->
   <div class="flower flower-tl"></div>
   <div class="flower flower-tr"></div>
   <div class="flower flower-bl"></div>
   <div class="flower flower-br"></div>
+  <div class="frame-outer"></div>
+  <div class="frame-inner"></div>
 
   <div class="content">
     <p class="top-text">Together with their families</p>
@@ -258,21 +175,20 @@ html,body{
   </div>
 </section>
 
-<!-- PAGE 2: PHOTO & NAMES -->
+<!-- PAGE 2 -->
 <section class="page" id="p2">
   <div class="bg"></div>
-  <div class="frame-outer"></div>
-  <div class="frame-inner"></div>
   <div class="flower flower-tl"></div>
   <div class="flower flower-tr"></div>
   <div class="flower flower-bl"></div>
   <div class="flower flower-br"></div>
+  <div class="frame-outer"></div>
+  <div class="frame-inner"></div>
 
   <div class="content">
     <div class="photo-container">
-      <!-- ✅ I-upload ang imong photo isip "couple.jpg" sa GitHub -->
       <img src="couple.jpg" alt="Ian & Jevelyn" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <div class="photo-placeholder" style="display:none;">
+      <div class="photo-placeholder" style="display:none;flex-direction:column;">
         <span>📷</span>
         <p>I-upload ang photo isip "couple.jpg"</p>
       </div>
@@ -295,15 +211,15 @@ html,body{
   </div>
 </section>
 
-<!-- PAGE 3: DETAILS -->
+<!-- PAGE 3 -->
 <section class="page" id="p3">
   <div class="bg"></div>
-  <div class="frame-outer"></div>
-  <div class="frame-inner"></div>
   <div class="flower flower-tl"></div>
   <div class="flower flower-tr"></div>
   <div class="flower flower-bl"></div>
   <div class="flower flower-br"></div>
+  <div class="frame-outer"></div>
+  <div class="frame-inner"></div>
 
   <div class="content">
     <h2 style="font-size:1.4rem;color:#7D3C98;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;">When & Where</h2>
@@ -334,15 +250,15 @@ html,body{
   </div>
 </section>
 
-<!-- PAGE 4: CLOSING -->
+<!-- PAGE 4 -->
 <section class="page" id="p4">
   <div class="bg"></div>
-  <div class="frame-outer"></div>
-  <div class="frame-inner"></div>
   <div class="flower flower-tl"></div>
   <div class="flower flower-tr"></div>
   <div class="flower flower-bl"></div>
   <div class="flower flower-br"></div>
+  <div class="frame-outer"></div>
+  <div class="frame-inner"></div>
 
   <div class="content">
     <h2 style="font-size:1.4rem;color:#7D3C98;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;">With Love</h2>
@@ -367,31 +283,13 @@ html,body{
 <script>
 let currentPage = 1;
 let totalPages = 4;
-
-function showPage(page){
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.getElementById('p' + page).classList.add('active');
-  currentPage = page;
+function showPage(p){
+  document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
+  document.getElementById('p'+p).classList.add('active');
+  currentPage=p;
 }
-
-function nextPage(){
-  if(currentPage < totalPages) showPage(currentPage + 1);
-}
-
-function prevPage(){
-  if(currentPage > 1) showPage(currentPage - 1);
-}
-
-// Swipe support
-let touchStartY = 0;
-document.addEventListener('touchstart', e => {
-  touchStartY = e.touches[0].clientY;
-}, {passive:true});
-document.addEventListener('touchend', e => {
-  const touchEndY = e.changedTouches[0].clientY;
-  if(touchStartY - touchEndY > 60) nextPage();
-  if(touchEndY - touchStartY > 60) prevPage();
-}, {passive:true});
+function nextPage(){if(currentPage<totalPages)showPage(currentPage+1);}
+function prevPage(){if(currentPage>1)showPage(currentPage-1);}
 </script>
 
 </body>
