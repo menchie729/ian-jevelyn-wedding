@@ -23,7 +23,6 @@ body{
   padding:30px 20px 80px;
   scroll-snap-align:start;
 }
-
 /* PURPLE GOLD FRAME */
 .frame{
   position:absolute;
@@ -44,7 +43,6 @@ body{
   border:1px solid rgba(212,175,55,0.35);
   border-radius:6px;
 }
-
 /* FLOWER CORNERS — CSS-only */
 .flower{
   position:absolute;
@@ -85,7 +83,6 @@ body{
               radial-gradient(circle at 80% 40%,#fff 0%,transparent 50%);
   clip-path:polygon(30% 30%,100% 30%,100% 100%,30% 100%);
 }
-
 h1{
   font-size:clamp(1.8rem,5vw,3rem);
   color:#8E44AD;
@@ -158,6 +155,7 @@ p{
 </head>
 <body>
 
+<!-- PAGE 1 -->
 <section class="slide" id="p1">
 <div class="frame"></div>
 <div class="frame-inner"></div>
@@ -166,10 +164,11 @@ p{
 <div class="flower flower-bl"></div>
 <div class="flower flower-br"></div>
 <h1>YOU ARE INVITED!</h1>
-<p>Join us for a celebration of love, joy, and new beginnings. Together with their families</p>
+<p>Join us for a celebration of love, joy, and new beginnings.<br>Together with their families</p>
 <div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
 </section>
 
+<!-- PAGE 2 -->
 <section class="slide" id="p2">
 <div class="frame"></div>
 <div class="frame-inner"></div>
@@ -182,6 +181,7 @@ p{
 <div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
 </section>
 
+<!-- PAGE 3 -->
 <section class="slide" id="p3">
 <div class="frame"></div>
 <div class="frame-inner"></div>
@@ -195,6 +195,7 @@ p{
 <div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
 </section>
 
+<!-- PAGE 4 -->
 <section class="slide" id="p4">
 <div class="frame"></div>
 <div class="frame-inner"></div>
@@ -209,6 +210,7 @@ p{
 <p style="font-style:italic;">"Two souls, one heart."</p>
 </section>
 
+<!-- PAGE 5 -->
 <section class="slide" id="p5">
 <div class="frame"></div>
 <div class="frame-inner"></div>
@@ -224,13 +226,41 @@ p{
 </section>
 
 <div class="nav">
-<button onclick="go(1)">PREV</button>
-<button onclick="go(2)">NEXT</button>
+<button onclick="prevPage()">PREV</button>
+<button onclick="nextPage()">NEXT</button>
 </div>
 
 <script>
-let c=1,t=5;
-function go(p){if(p<1||p>t)return;c=p;document.getElementById('p'+c).scrollIntoView({behavior:'smooth'});}
+let currentPage = 1;
+const totalPages = 5;
+
+function goToPage(pageNum) {
+  if(pageNum < 1 || pageNum > totalPages) return;
+  currentPage = pageNum;
+  document.getElementById('p' + currentPage).scrollIntoView({behavior: 'smooth'});
+}
+
+function nextPage() {
+  if(currentPage < totalPages) goToPage(currentPage + 1);
+}
+
+function prevPage() {
+  if(currentPage > 1) goToPage(currentPage - 1);
+}
+
+// Swipe support
+document.addEventListener('touchstart', e => {
+  window.startY = e.touches[0].clientY;
+}, {passive: true});
+
+document.addEventListener('touchend', e => {
+  if(!window.startY) return;
+  const endY = e.changedTouches[0].clientY;
+  if(window.startY - endY > 60) nextPage();
+  if(endY - window.startY > 60) prevPage();
+  window.startY = null;
+}, {passive: true});
 </script>
+
 </body>
 </html>
