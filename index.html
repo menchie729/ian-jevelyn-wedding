@@ -1,378 +1,237 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <title>Jan & Jevelyn — Wedding Invitation</title>
-    <style>
-        * {margin:0; padding:0; box-sizing:border-box;}
-        html {scroll-behavior:smooth; scroll-snap-type:y mandatory;}
-        body {
-            overflow-y:scroll;
-            font-family:'Georgia', 'Times New Roman', serif;
-            background:linear-gradient(135deg, #FFFAF5, #F9F2E8);
-            color:#5A4A3A;
-        }
-        .slide {
-            width:100vw; min-height:100vh;
-            display:flex; flex-direction:column;
-            align-items:center; justify-content:center;
-            position:relative;
-            padding:30px 24px 90px;
-            scroll-snap-align:start;
-            overflow:hidden;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Jan & Jevelyn Wedding</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;}
+body{
+  font-family:Georgia,serif;
+  background:linear-gradient(135deg,#FDF8FF,#F6EEFF);
+  color:#4B2E5A;
+}
+.slide{
+  width:100vw;
+  min-height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  padding:30px 20px 80px;
+  scroll-snap-align:start;
+}
 
-        /* ✨ DECORATIVE CORNERS — makita na gyud! */
-        .corner {
-            position:absolute;
-            width:120px; height:120px;
-            opacity:0.7;
-            z-index:1;
-            pointer-events:none;
-        }
-        .corner-tl {
-            top:15px; left:15px;
-            border-top:2px solid #D4AF37;
-            border-left:2px solid #D4AF37;
-        }
-        .corner-tr {
-            top:15px; right:15px;
-            border-top:2px solid #D4AF37;
-            border-right:2px solid #D4AF37;
-        }
-        .corner-bl {
-            bottom:70px; left:15px;
-            border-bottom:2px solid #D4AF37;
-            border-left:2px solid #D4AF37;
-        }
-        .corner-br {
-            bottom:70px; right:15px;
-            border-bottom:2px solid #D4AF37;
-            border-right:2px solid #D4AF37;
-        }
-        .corner-inner {
-            position:absolute;
-            width:60px; height:60px;
-            border-color:#E8C872;
-            border-style:solid;
-            border-width:1px;
-        }
-        .tl-inner {top:30px; left:30px; border-right:none; border-bottom:none;}
-        .tr-inner {top:30px; right:30px; border-left:none; border-bottom:none;}
-        .bl-inner {bottom:85px; left:30px; border-right:none; border-top:none;}
-        .br-inner {bottom:85px; right:30px; border-left:none; border-top:none;}
+/* PURPLE GOLD FRAME */
+.frame{
+  position:absolute;
+  top:18px;
+  left:18px;
+  right:18px;
+  bottom:65px;
+  border:2px solid #D4AF37;
+  border-radius:8px;
+  box-shadow:inset 0 0 18px rgba(128,0,128,0.08);
+}
+.frame-inner{
+  position:absolute;
+  top:28px;
+  left:28px;
+  right:28px;
+  bottom:75px;
+  border:1px solid rgba(212,175,55,0.35);
+  border-radius:6px;
+}
 
-        .gold-frame {
-            position:absolute;
-            top:25px; left:25px; right:25px; bottom:80px;
-            border:1px solid #D4AF37;
-            z-index:2;
-            pointer-events:none;
-        }
-        .gold-frame-outer {
-            position:absolute;
-            top:30px; left:30px; right:30px; bottom:85px;
-            border:1px solid rgba(212,175,55,0.4);
-            z-index:2;
-            pointer-events:none;
-        }
-        .accent-dot {
-            display:inline-block;
-            width:8px; height:8px;
-            background:#D4AF37;
-            border-radius:50%;
-            margin:0 12px;
-        }
+/* FLOWER CORNERS — CSS-only */
+.flower{
+  position:absolute;
+  width:90px;
+  height:90px;
+  z-index:2;
+  pointer-events:none;
+}
+.flower-tl{
+  top:12px;
+  left:12px;
+  background:radial-gradient(circle at 30% 30%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
+              radial-gradient(circle at 60% 20%,#F7DC6F 0%,#D4AF37 35%,transparent 60%),
+              radial-gradient(circle at 20% 60%,#fff 0%,transparent 50%);
+  clip-path:polygon(0 0,70% 0,70% 70%,0 70%);
+}
+.flower-tr{
+  top:12px;
+  right:12px;
+  background:radial-gradient(circle at 70% 30%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
+              radial-gradient(circle at 40% 20%,#F7DC6F 0%,#D4AF37 35%,transparent 60%),
+              radial-gradient(circle at 80% 60%,#fff 0%,transparent 50%);
+  clip-path:polygon(30% 0,100% 0,100% 70%,30% 70%);
+}
+.flower-bl{
+  bottom:62px;
+  left:12px;
+  background:radial-gradient(circle at 30% 70%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
+              radial-gradient(circle at 60% 80%,#F7DC6F 0%,#D4AF37 35%,transparent 60%),
+              radial-gradient(circle at 20% 40%,#fff 0%,transparent 50%);
+  clip-path:polygon(0 30%,70% 30%,70% 100%,0 100%);
+}
+.flower-br{
+  bottom:62px;
+  right:12px;
+  background:radial-gradient(circle at 70% 70%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
+              radial-gradient(circle at 40% 80%,#F7DC6F 0%,#D4AF37 35%,transparent 60%),
+              radial-gradient(circle at 80% 40%,#fff 0%,transparent 50%);
+  clip-path:polygon(30% 30%,100% 30%,100% 100%,30% 100%);
+}
 
-        .main-text {
-            font-size:clamp(1.8rem,5vw,3rem);
-            color:#B8860B;
-            letter-spacing:0.2em;
-            text-transform:uppercase;
-            z-index:3;
-            text-align:center;
-            line-height:1.4;
-        }
-        .sub-text {
-            font-size:clamp(1rem,2.5vw,1.2rem);
-            color:#705C47;
-            line-height:1.8;
-            text-align:center;
-            z-index:3;
-            max-width:85%;
-            margin-top:1.5rem;
-        }
-        .divider {
-            display:flex; align-items:center; justify-content:center;
-            gap:12px; margin:1.8rem 0;
-            z-index:3;
-        }
-        .divider-line {
-            width:60px; height:1px;
-            background:linear-gradient(90deg, transparent, #D4AF37, transparent);
-        }
-        .divider-diamond {
-            width:10px; height:10px;
-            border:1px solid #D4AF37;
-            transform:rotate(45deg);
-        }
-        .name-lg {
-            font-size:clamp(2rem,6vw,3.5rem);
-            color:#8B6A35;
-            letter-spacing:0.12em;
-            z-index:3;
-            text-align:center;
-            line-height:1.3;
-            font-weight:normal;
-        }
-        .details {
-            font-size:clamp(1.1rem,2.5vw,1.4rem);
-            color:#705C47;
-            line-height:2;
-            letter-spacing:0.08em;
-            z-index:3;
-            text-align:center;
-        }
-        .intro-line {
-            font-size:clamp(1.1rem,2.5vw,1.4rem);
-            color:#8B7355;
-            letter-spacing:0.18em;
-            z-index:3;
-            text-align:center;
-        }
-        .venue-location {
-            font-size:1rem;
-            color:#8B7355;
-        }
-        .quote {
-            margin-top:2rem;
-            font-style:italic;
-            color:#705C47;
-            z-index:3;
-            text-align:center;
-            font-size:1.1rem;
-        }
-        .closing-heading {
-            font-size:clamp(1.2rem,3vw,1.6rem);
-            color:#8B7355;
-            letter-spacing:0.14em;
-            z-index:3;
-            text-align:center;
-        }
-        .closing-names {
-            font-size:clamp(1.8rem,5vw,3rem);
-        }
-        .nav {
-            position:fixed;
-            bottom:15px; left:50%;
-            transform:translateX(-50%);
-            z-index:9999;
-            display:flex; gap:15px;
-        }
-        .nav button {
-            background:linear-gradient(135deg, #B8860B, #D4AF37);
-            color:white; border:none;
-            padding:12px 30px;
-            font-size:1rem;
-            border-radius:4px;
-            cursor:pointer;
-            letter-spacing:0.1em;
-            box-shadow:0 2px 6px rgba(184,134,11,0.2);
-            -webkit-tap-highlight-color:transparent;
-            transition:transform 0.2s;
-        }
-        .nav button:active {
-            transform:scale(0.97);
-        }
-        .slide > * {
-            animation:fadeIn 1.5s ease-in-out forwards;
-            opacity:0;
-        }
-        @keyframes fadeIn {
-            from {opacity:0; transform:translateY(15px);}
-            to {opacity:1; transform:translateY(0);}
-        }
-        @media (min-width:768px) {
-            .slide {padding:40px 40px 100px;}
-            .corner {width:150px; height:150px;}
-            .gold-frame {top:35px; left:35px; right:35px; bottom:90px;}
-            .gold-frame-outer {top:40px; left:40px; right:40px; bottom:95px;}
-            .sub-text {max-width:70%;}
-            .divider-line {width:80px;}
-            .nav {bottom:20px; gap:20px;}
-            .nav button {padding:14px 35px; font-size:1.05rem;}
-        }
-    </style>
+h1{
+  font-size:clamp(1.8rem,5vw,3rem);
+  color:#8E44AD;
+  letter-spacing:0.2em;
+  text-transform:uppercase;
+  z-index:3;
+  text-align:center;
+}
+p{
+  font-size:clamp(1rem,2.5vw,1.2rem);
+  color:#6C3483;
+  line-height:1.8;
+  text-align:center;
+  max-width:85%;
+  margin-top:1.5rem;
+}
+.names{
+  font-size:clamp(2rem,6vw,3.5rem);
+  color:#7D3C98;
+  margin:1rem 0;
+}
+.details{
+  font-size:clamp(1.1rem,2.5vw,1.3rem);
+  line-height:2;
+  color:#6C3483;
+}
+.divider{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  margin:1.5rem 0;
+  z-index:3;
+}
+.line{
+  width:60px;
+  height:2px;
+  background:linear-gradient(90deg,transparent,#D4AF37,transparent);
+}
+.dot{
+  width:12px;
+  height:12px;
+  background:#D4AF37;
+  border-radius:50%;
+  box-shadow:0 0 10px rgba(212,175,55,0.6);
+}
+.nav{
+  position:fixed;
+  bottom:15px;
+  left:50%;
+  transform:translateX(-50%);
+  display:flex;
+  gap:15px;
+  z-index:999;
+}
+.nav button{
+  background:linear-gradient(135deg,#8E44AD,#D4AF37);
+  color:white;
+  border:none;
+  padding:12px 25px;
+  font-size:1rem;
+  border-radius:5px;
+  cursor:pointer;
+}
+@media (min-width:768px){
+  .flower{width:130px;height:130px;}
+  .frame{top:30px;left:30px;right:30px;bottom:80px;}
+  .frame-inner{top:42px;left:42px;right:42px;bottom:92px;}
+}
+</style>
 </head>
 <body>
-    <!-- Page 1 -->
-    <section class="slide" id="page1">
-        <div class="corner corner-tl"></div>
-        <div class="corner corner-tr"></div>
-        <div class="corner corner-bl"></div>
-        <div class="corner corner-br"></div>
-        <div class="corner-inner tl-inner"></div>
-        <div class="corner-inner tr-inner"></div>
-        <div class="corner-inner bl-inner"></div>
-        <div class="corner-inner br-inner"></div>
-        <div class="gold-frame-outer"></div>
-        <div class="gold-frame"></div>
 
-        <h1 class="main-text">YOU ARE INVITED</h1>
-        <p class="sub-text">Join us for a celebration of love, joy, and new beginnings.</p>
-        <div class="divider">
-            <span class="divider-line"></span>
-            <span class="divider-diamond"></span>
-            <span class="divider-line"></span>
-        </div>
-    </section>
+<section class="slide" id="p1">
+<div class="frame"></div>
+<div class="frame-inner"></div>
+<div class="flower flower-tl"></div>
+<div class="flower flower-tr"></div>
+<div class="flower flower-bl"></div>
+<div class="flower flower-br"></div>
+<h1>YOU ARE INVITED</h1>
+<p>Join us for a celebration of love, joy, and new beginnings.</p>
+<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+</section>
 
-    <!-- Page 2 -->
-    <section class="slide" id="page2">
-        <div class="corner corner-tl"></div>
-        <div class="corner corner-tr"></div>
-        <div class="corner corner-bl"></div>
-        <div class="corner corner-br"></div>
-        <div class="corner-inner tl-inner"></div>
-        <div class="corner-inner tr-inner"></div>
-        <div class="corner-inner bl-inner"></div>
-        <div class="corner-inner br-inner"></div>
-        <div class="gold-frame-outer"></div>
-        <div class="gold-frame"></div>
+<section class="slide" id="p2">
+<div class="frame"></div>
+<div class="frame-inner"></div>
+<div class="flower flower-tl"></div>
+<div class="flower flower-tr"></div>
+<div class="flower flower-bl"></div>
+<div class="flower flower-br"></div>
+<p>Together with their families</p>
+<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+<h1 class="names">Jan & Jevelyn</h1>
+<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+</section>
 
-        <p class="sub-text" style="margin:0 0 1rem;">Together with their families</p>
-        <p class="intro-line">The Wedding of</p>
-        <div class="divider">
-            <span class="divider-line"></span>
-            <span class="divider-diamond"></span>
-            <span class="divider-line"></span>
-        </div>
-        <h1 class="name-lg">Jan & Jevelyn</h1>
-        <div class="divider">
-            <span class="divider-line"></span>
-            <span class="divider-diamond"></span>
-            <span class="divider-line"></span>
-        </div>
-    </section>
+<section class="slide" id="p3">
+<div class="frame"></div>
+<div class="frame-inner"></div>
+<div class="flower flower-tl"></div>
+<div class="flower flower-tr"></div>
+<div class="flower flower-bl"></div>
+<div class="flower flower-br"></div>
+<p>Please join us on</p>
+<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+<p class="details">October 5, 2026<br>Monday — 2:00 PM</p>
+<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+</section>
 
-    <!-- Page 3 -->
-    <section class="slide" id="page3">
-        <div class="corner corner-tl"></div>
-        <div class="corner corner-tr"></div>
-        <div class="corner corner-bl"></div>
-        <div class="corner corner-br"></div>
-        <div class="corner-inner tl-inner"></div>
-        <div class="corner-inner tr-inner"></div>
-        <div class="corner-inner bl-inner"></div>
-        <div class="corner-inner br-inner"></div>
-        <div class="gold-frame-outer"></div>
-        <div class="gold-frame"></div>
+<section class="slide" id="p4">
+<div class="frame"></div>
+<div class="frame-inner"></div>
+<div class="flower flower-tl"></div>
+<div class="flower flower-tr"></div>
+<div class="flower flower-bl"></div>
+<div class="flower flower-br"></div>
+<p>At</p>
+<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+<p class="details">Old Stone Inn<br>Cebu City, Philippines</p>
+<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+<p style="font-style:italic;">"Two souls, one heart."</p>
+</section>
 
-        <p class="sub-text" style="margin:0 0 0.5rem;">Please join us on</p>
-        <div class="divider">
-            <span class="divider-line"></span>
-            <span class="divider-diamond"></span>
-            <span class="divider-line"></span>
-        </div>
-        <div class="details">
-            October 5, 2026<br><br>
-            Monday — 2:00 PM
-        </div>
-        <div class="divider">
-            <span class="divider-line"></span>
-            <span class="divider-diamond"></span>
-            <span class="divider-line"></span>
-        </div>
-    </section>
+<section class="slide" id="p5">
+<div class="frame"></div>
+<div class="frame-inner"></div>
+<div class="flower flower-tl"></div>
+<div class="flower flower-tr"></div>
+<div class="flower flower-bl"></div>
+<div class="flower flower-br"></div>
+<p>We Can't Wait</p>
+<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+<h1 class="names">To Celebrate With You</h1>
+<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
+<p>Your presence is the greatest gift.<br>See you there!</p>
+</section>
 
-    <!-- Page 4 -->
-    <section class="slide" id="page4">
-        <div class="corner corner-tl"></div>
-        <div class="corner corner-tr"></div>
-        <div class="corner corner-bl"></div>
-        <div class="corner corner-br"></div>
-        <div class="corner-inner tl-inner"></div>
-        <div class="corner-inner tr-inner"></div>
-        <div class="corner-inner bl-inner"></div>
-        <div class="corner-inner br-inner"></div>
-        <div class="gold-frame-outer"></div>
-        <div class="gold-frame"></div>
+<div class="nav">
+<button onclick="go(1)">PREV</button>
+<button onclick="go(2)">NEXT</button>
+</div>
 
-        <p class="sub-text" style="margin:0 0 0.5rem;">At</p>
-        <div class="divider">
-            <span class="divider-line"></span>
-            <span class="divider-diamond"></span>
-            <span class="divider-line"></span>
-        </div>
-        <div class="details">
-            Old Stone Inn<br>
-            <span class="venue-location">Cebu City, Philippines</span>
-        </div>
-        <div class="divider">
-            <span class="divider-line"></span>
-            <span class="divider-diamond"></span>
-            <span class="divider-line"></span>
-        </div>
-        <p class="quote">"Two souls, one heart."</p>
-    </section>
-
-    <!-- Page 5 -->
-    <section class="slide" id="page5">
-        <div class="corner corner-tl"></div>
-        <div class="corner corner-tr"></div>
-        <div class="corner corner-bl"></div>
-        <div class="corner corner-br"></div>
-        <div class="corner-inner tl-inner"></div>
-        <div class="corner-inner tr-inner"></div>
-        <div class="corner-inner bl-inner"></div>
-        <div class="corner-inner br-inner"></div>
-        <div class="gold-frame-outer"></div>
-        <div class="gold-frame"></div>
-
-        <p class="closing-heading">We Can't Wait</p>
-        <div class="divider">
-            <span class="divider-line"></span>
-            <span class="divider-diamond"></span>
-            <span class="divider-line"></span>
-        </div>
-        <h1 class="name-lg closing-names">To Celebrate<br>With You</h1>
-        <div class="divider">
-            <span class="divider-line"></span>
-            <span class="divider-diamond"></span>
-            <span class="divider-line"></span>
-        </div>
-        <p class="sub-text">Your presence is the greatest gift.<br>See you there!</p>
-    </section>
-
-    <!-- Navigation -->
-    <div class="nav">
-        <button onclick="prevPage()">PREV</button>
-        <button onclick="nextPage()">NEXT</button>
-    </div>
-
-    <script>
-        let currentPage = 1;
-        const totalPages = 5;
-        function goToPage(p){
-            if(p<1 || p>totalPages) return;
-            currentPage = p;
-            document.getElementById('page'+currentPage).scrollIntoView({behavior:'smooth'});
-        }
-        function nextPage(){if(currentPage<totalPages) goToPage(currentPage+1);}
-        function prevPage(){if(currentPage>1) goToPage(currentPage-1);}
-        document.addEventListener('touchstart',e=>{window.sY=e.touches[0].clientY;},{passive:true});
-        document.addEventListener('touchend',e=>{
-            if(!window.sY) return;
-            const eY = e.changedTouches[0].clientY;
-            if(window.sY - eY > 60) nextPage();
-            if(eY - window.sY > 60) prevPage();
-            window.sY = null;
-        },{passive:true});
-        document.addEventListener('keydown',e=>{
-            if(e.key==='ArrowDown' || e.key==='ArrowRight') nextPage();
-            if(e.key==='ArrowUp' || e.key==='ArrowLeft') prevPage();
-        });
-    </script>
+<script>
+let c=1,t=5;
+function go(p){if(p<1||p>t)return;c=p;document.getElementById('p'+c).scrollIntoView({behavior:'smooth'});}
+</script>
 </body>
 </html>
