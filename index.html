@@ -13,7 +13,6 @@ html,body{
   font-family:Georgia, 'Times New Roman', serif;
 }
 
-/* BACKGROUND */
 .bg{
   position:absolute;
   top:0;left:0;
@@ -22,12 +21,11 @@ html,body{
   z-index:0;
 }
 
-/* FLOWERS — 4 ka kilid, siguradong makita */
 .flower{
   position:absolute;
   width:130px;
   height:130px;
-  z-index:6; /* mas taas kaysa frame para makita sa ibabaw */
+  z-index:6;
   pointer-events:none;
 }
 .flower-tl{
@@ -71,7 +69,6 @@ html,body{
   clip-path:polygon(30% 30%, 100% 30%, 100% 100%, 30% 100%);
 }
 
-/* GOLD BORDER FRAME */
 .frame-outer{
   position:absolute;
   top:15px;left:15px;right:15px;bottom:15px;
@@ -87,7 +84,6 @@ html,body{
   z-index:2;
 }
 
-/* CONTENT */
 .content{
   position:absolute;
   top:50%;left:50%;
@@ -97,16 +93,26 @@ html,body{
   width:90%;
   max-width:480px;
 }
+
+/* Photo area — gamay ra para dili molabig */
 .photo-container{
-  width:100%;max-width:340px;height:240px;
-  border-radius:8px;border:2px solid #D4AF37;
-  overflow:hidden;margin:0 auto 18px;
+  width:100%;
+  max-width:260px;
+  height:190px;
+  border-radius:8px;
+  border:2px solid #D4AF37;
+  overflow:hidden;
+  margin:0 auto 18px;
   background:#F6EEFF;
-  display:flex;align-items:center;justify-content:center;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.photo-container img{width:100%;height:100%;object-fit:cover;}
-.photo-placeholder{color:#7D3C98;text-align:center;}
-.photo-placeholder span{font-size:3rem;display:block;margin-bottom:8px;}
+.photo-container img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
 .names{
   font-size:clamp(2.4rem,8vw,3.4rem);
@@ -127,11 +133,9 @@ html,body{
 .detail-text{font-size:0.9rem;color:#6C3483;line-height:1.5;}
 .bottom-msg{font-style:italic;color:#6C3483;margin-top:8px;font-size:0.95rem;}
 
-/* PAGES */
 .page{position:absolute;top:0;left:0;width:100%;height:100%;display:none;z-index:1;}
 .page.active{display:block;}
 
-/* NAVIGATION */
 .nav{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:15px;z-index:10;}
 .nav button{
   background:linear-gradient(135deg,#8E44AD,#D4AF37);
@@ -145,7 +149,6 @@ html,body{
 <!-- PAGE 1 -->
 <section class="page active" id="p1">
   <div class="bg"></div>
-  <!-- FLOWERS — una ibutang para sa ibabaw makita -->
   <div class="flower flower-tl"></div>
   <div class="flower flower-tr"></div>
   <div class="flower flower-bl"></div>
@@ -175,7 +178,7 @@ html,body{
   </div>
 </section>
 
-<!-- PAGE 2 -->
+<!-- PAGE 2 — Photo & Names -->
 <section class="page" id="p2">
   <div class="bg"></div>
   <div class="flower flower-tl"></div>
@@ -187,11 +190,7 @@ html,body{
 
   <div class="content">
     <div class="photo-container">
-      <img src="couple.jpg" alt="Ian & Jevelyn" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
-      <div class="photo-placeholder" style="display:none;flex-direction:column;">
-        <span>📷</span>
-        <p>I-upload ang photo isip "couple.jpg"</p>
-      </div>
+      <img src="https://i.postimg.cc/0QqZb3Kt/couple.jpg" alt="Ian & Jevelyn">
     </div>
     <h1 class="names" style="font-size:clamp(2rem,6vw,2.8rem);">
       Ian
@@ -232,14 +231,16 @@ html,body{
       <div class="detail-col">
         <div class="detail-icon">📅</div>
         <div class="detail-text">October 5, 2026</div>
+        <div class="detail-text">Monday</div>
       </div>
       <div class="detail-col">
         <div class="detail-icon">⏰</div>
-        <div class="detail-text">Monday<br>2:00 PM</div>
+        <div class="detail-text">2:00 PM</div>
       </div>
       <div class="detail-col">
-        <div class="detail-icon">📍</div>
-        <div class="detail-text">Old Stone Inn<br>Canada</div>
+        <div class="detail-icon">📍</td>
+        <div class="detail-text">Old Stone Inn</div>
+        <div class="detail-text">Canada</div>
       </div>
     </div>
   </div>
@@ -261,7 +262,7 @@ html,body{
   <div class="frame-inner"></div>
 
   <div class="content">
-    <h2 style="font-size:1.4rem;color:#7D3C98;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;">With Love</h2>
+    <h2 style="font-size:1.4rem;color:#7D3C98;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;">With Love</point>
     <div class="divider">
       <span class="d-line"></span>
       <span class="d-heart"></span>
@@ -269,14 +270,9 @@ html,body{
     </div>
     <p class="bottom-msg" style="font-size:1.1rem;line-height:1.8;">
       "Two souls, one heart."<br><br>
-      We look forward to celebrating<br>this special day with you!
-    </p>
-    <p style="margin-top:20px;color:#D4AF37;font-style:italic;">— Ian & Jevelyn —</p>
-  </div>
-
-  <div class="nav">
-    <button onclick="prevPage()">PREV</button>
-    <button onclick="nextPage()">NEXT</button>
+      We look forward to celebrating
+   
+    </div>
   </div>
 </section>
 
