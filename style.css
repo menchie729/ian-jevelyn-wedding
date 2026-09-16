@@ -1,0 +1,318 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-snap-type: y mandatory;
+}
+
+body {
+    overflow-y: scroll;
+    font-family: 'Georgia', 'Times New Roman', serif;
+    background: linear-gradient(135deg, #FFFAF5, #F9F2E8);
+    color: #5A4A3A;
+}
+
+.slide {
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 20px 24px 80px;
+    scroll-snap-align: start;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.gold-frame {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    right: 16px;
+    bottom: 65px;
+    border: 1px solid #D4AF37;
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+.gold-frame-inner {
+    position: absolute;
+    top: 22px;
+    left: 22px;
+    right: 22px;
+    bottom: 71px;
+    border: 0.5px solid rgba(212, 175, 55, 0.4);
+    border-radius: 4px;
+    pointer-events: none;
+    z-index: 2;
+}
+
+/* ==========================================
+   ✨ REALISTIC FLOWER CORNERS — VISIBLE NOW!
+   ========================================== */
+.floral-corner {
+    position: absolute;
+    width: 160px;
+    height: 160px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 1;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Top Left Flowers */
+.floral-tl {
+    top: 5px;
+    left: 5px;
+    background-image: url('https://images.unsplash.com/photo-1522684462852-01b24e76b77d?w=350&h=350&fit=crop');
+    clip-path: polygon(0 0, 75% 0, 75% 75%, 0 75%);
+}
+
+/* Top Right Flowers — mirrored */
+.floral-tr {
+    top: 5px;
+    right: 5px;
+    background-image: url('https://images.unsplash.com/photo-1522684462852-01b24e76b77d?w=350&h=350&fit=crop');
+    clip-path: polygon(25% 0, 100% 0, 100% 75%, 25% 75%);
+    transform: scaleX(-1);
+}
+
+/* Bottom Left Flowers */
+.floral-bl {
+    bottom: 50px;
+    left: 5px;
+    background-image: url('https://images.unsplash.com/photo-1522684462852-01b24e76b77d?w=350&h=350&fit=crop');
+    clip-path: polygon(0 25%, 75% 25%, 75% 100%, 0 100%);
+    transform: scaleY(-1);
+}
+
+/* Bottom Right Flowers */
+.floral-br {
+    bottom: 50px;
+    right: 5px;
+    background-image: url('https://images.unsplash.com/photo-1522684462852-01b24e76b77d?w=350&h=350&fit=crop');
+    clip-path: polygon(25% 25%, 100% 25%, 100% 100%, 25% 100%);
+    transform: scale(-1, -1);
+}
+
+.wash {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.wash-left {
+    left: 0;
+    top: 0;
+    background: radial-gradient(circle at 8% 8%, rgba(212, 175, 55, 0.1) 0%, transparent 30%);
+}
+
+.wash-right {
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 92% 92%, rgba(212, 175, 55, 0.1) 0%, transparent 30%);
+}
+
+.main-text {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    color: #B8860B;
+    letter-spacing: 0.2em;
+    font-weight: normal;
+    text-align: center;
+    z-index: 3;
+    text-transform: uppercase;
+    line-height: 1.3;
+}
+
+.sub-text {
+    font-size: clamp(0.95rem, 2vw, 1.15rem);
+    color: #705C47;
+    line-height: 1.7;
+    text-align: center;
+    z-index: 3;
+    max-width: 85%;
+    margin-top: 1.2rem;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin: 1.5rem 0;
+    z-index: 3;
+}
+
+.divider-line {
+    width: 40px;
+    height: 1px;
+    background: #B8860B;
+}
+
+.divider-heart {
+    width: 12px;
+    height: 12px;
+    border: 1px solid #D4AF37;
+    transform: rotate(45deg);
+    border-radius: 2px 0 0 0;
+    background: transparent;
+}
+
+.intro-line {
+    font-size: clamp(1rem, 2.4vw, 1.3rem);
+    color: #8B7355;
+    letter-spacing: 0.18em;
+    z-index: 3;
+    text-align: center;
+}
+
+.name-lg {
+    font-size: clamp(1.8rem, 5vw, 3.2rem);
+    color: #8B6A35;
+    letter-spacing: 0.12em;
+    font-weight: normal;
+    text-align: center;
+    z-index: 3;
+    line-height: 1.3;
+}
+
+.details {
+    font-size: clamp(1rem, 2.4vw, 1.3rem);
+    color: #705C47;
+    line-height: 2;
+    letter-spacing: 0.08em;
+    z-index: 3;
+    text-align: center;
+}
+
+.venue-location {
+    font-size: 1rem;
+    color: #8B7355;
+}
+
+.quote {
+    margin-top: 2rem;
+    font-style: italic;
+    color: #705C47;
+    z-index: 3;
+    text-align: center;
+}
+
+.closing-heading {
+    font-size: clamp(1.1rem, 2.8vw, 1.5rem);
+    color: #8B7355;
+    letter-spacing: 0.14em;
+    z-index: 3;
+    text-align: center;
+}
+
+.closing-names {
+    font-size: clamp(1.7rem, 4.8vw, 2.8rem);
+}
+
+.nav {
+    position: fixed;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: flex;
+    gap: 12px;
+}
+
+.nav button {
+    background: rgba(184, 134, 11, 0.9);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 0.95rem;
+    border-radius: 6px;
+    cursor: pointer;
+    letter-spacing: 0.1em;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.nav button:active {
+    background: #996F00;
+    transform: scale(0.97);
+}
+
+.slide > * {
+    animation: fadeIn 1.4s ease-in-out forwards;
+    opacity: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ==========================================
+   TABLET & DESKTOP — LARGER FLOWERS
+   ========================================== */
+@media (min-width: 768px) {
+    .slide {
+        padding: 40px 40px 100px;
+    }
+
+    .gold-frame {
+        top: 28px;
+        left: 28px;
+        right: 28px;
+        bottom: 70px;
+        border-radius: 8px;
+    }
+
+    .gold-frame-inner {
+        top: 36px;
+        left: 36px;
+        right: 36px;
+        bottom: 78px;
+    }
+
+    .floral-corner {
+        width: 220px;
+        height: 220px;
+    }
+
+    .floral-tl { top: 15px; left: 15px; }
+    .floral-tr { top: 15px; right: 15px; }
+    .floral-bl { bottom: 60px; left: 15px; }
+    .floral-br { bottom: 60px; right: 15px; }
+
+    .sub-text {
+        max-width: 72%;
+    }
+
+    .divider-line {
+        width: 55px;
+    }
+
+    .nav {
+        bottom: 18px;
+        gap: 18px;
+    }
+
+    .nav button {
+        padding: 12px 28px;
+        font-size: 1rem;
+    }
+}
