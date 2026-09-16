@@ -3,223 +3,244 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Jan & Jevelyn Wedding</title>
+<title>Ian & Jevelyn Wedding Invitation</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 body{
   font-family:Georgia,serif;
   background:linear-gradient(135deg,#FDF8FF,#F6EEFF);
   color:#4B2E5A;
-  line-height:1.6;
-}
-.wrapper{
-  max-width:600px;
-  margin:0 auto;
-  padding:18px;
+  min-height:100vh;
+  padding:20px;
 }
 .card{
+  max-width:500px;
+  margin:0 auto;
   position:relative;
   background:#fffef9;
   border:2px solid #D4AF37;
   border-radius:12px;
-  padding:22px 18px 18px;
+  padding:30px 25px 25px;
   overflow:hidden;
+  box-shadow:0 0 20px rgba(128,0,128,0.1);
 }
-/* TOP PHOTO */
-.photo-frame{
-  width:100%;
-  height:240px;
-  border-radius:8px;
-  overflow:hidden;
-  border:1px solid #D4AF37;
-  margin-bottom:18px;
-}
-.photo-frame img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
-/* FLOWER DECOR */
-.flower-corner{
+
+/* FLOWER DECORATIONS */
+.flower{
   position:absolute;
-  width:120px;
-  height:120px;
+  width:130px;
+  height:130px;
   pointer-events:none;
   z-index:2;
 }
 .flower-tl{
-  top:0;
-  left:0;
-  background:radial-gradient(circle at 20% 20%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
-              radial-gradient(circle at 50% 10%,#fff 0%,transparent 50%),
-              radial-gradient(circle at 10% 50%,#F7DC6F 0%,#D4AF37 35%,transparent 60%);
-  clip-path:polygon(0 0,65% 0,65% 65%,0 65%);
+  top:0;left:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 25% 25%,#9B59B6 0%,#8E44AD 40%,transparent 70%),
+    radial-gradient(ellipse 40% 50% at 45% 20%,#B977D1 0%,#9B59B6 40%,transparent 70%),
+    radial-gradient(circle at 35% 40%,#F7DC6F 0%,#D4AF37 40%,transparent 60%),
+    radial-gradient(circle at 20% 35%,#fff 0%,transparent 50%);
+  clip-path:polygon(0 0,70% 0,70% 70%,0 70%);
 }
 .flower-tr{
-  top:0;
-  right:0;
-  background:radial-gradient(circle at 80% 20%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
-              radial-gradient(circle at 50% 10%,#fff 0%,transparent 50%),
-              radial-gradient(circle at 90% 50%,#F7DC6F 0%,#D4AF37 35%,transparent 60%);
-  clip-path:polygon(35% 0,100% 0,100% 65%,35% 65%);
+  top:0;right:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 75% 25%,#9B59B6 0%,#8E44AD 40%,transparent 70%),
+    radial-gradient(ellipse 40% 50% at 55% 20%,#B977D1 0%,#9B59B6 40%,transparent 70%),
+    radial-gradient(circle at 65% 40%,#F7DC6F 0%,#D4AF37 40%,transparent 60%),
+    radial-gradient(circle at 80% 35%,#fff 0%,transparent 50%);
+  clip-path:polygon(30% 0,100% 0,100% 70%,30% 70%);
 }
 .flower-bl{
-  bottom:0;
-  left:0;
-  background:radial-gradient(circle at 20% 80%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
-              radial-gradient(circle at 50% 90%,#fff 0%,transparent 50%),
-              radial-gradient(circle at 10% 50%,#F7DC6F 0%,#D4AF37 35%,transparent 60%);
-  clip-path:polygon(0 35%,65% 35%,65% 100%,0 100%);
+  bottom:0;left:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 25% 75%,#9B59B6 0%,#8E44AD 40%,transparent 70%),
+    radial-gradient(ellipse 40% 50% at 45% 80%,#B977D1 0%,#9B59B6 40%,transparent 70%),
+    radial-gradient(circle at 35% 60%,#F7DC6F 0%,#D4AF37 40%,transparent 60%),
+    radial-gradient(circle at 20% 65%,#fff 0%,transparent 50%);
+  clip-path:polygon(0 30%,70% 30%,70% 100%,0 100%);
 }
 .flower-br{
-  bottom:0;
-  right:0;
-  background:radial-gradient(circle at 80% 80%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
-              radial-gradient(circle at 50% 90%,#fff 0%,transparent 50%),
-              radial-gradient(circle at 90% 50%,#F7DC6F 0%,#D4AF37 35%,transparent 60%);
-  clip-path:polygon(35% 35%,100% 35%,100% 100%,35% 100%);
+  bottom:0;right:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 75% 75%,#9B59B6 0%,#8E44AD 40%,transparent 70%),
+    radial-gradient(ellipse 40% 50% at 55% 80%,#B977D1 0%,#9B59B6 40%,transparent 70%),
+    radial-gradient(circle at 65% 60%,#F7DC6F 0%,#D4AF37 40%,transparent 60%),
+    radial-gradient(circle at 80% 65%,#fff 0%,transparent 50%);
+  clip-path:polygon(30% 30%,100% 30%,100% 100%,30% 100%);
 }
-/* TEXT */
-.top-text{
-  font-size:0.9rem;
-  text-align:center;
-  color:#6C3483;
-  text-transform:uppercase;
-  letter-spacing:1px;
-  margin-bottom:8px;
+
+/* PHOTO AREA */
+.photo-box{
+  width:100%;
+  height:260px;
+  border-radius:8px;
+  border:1px solid #D4AF37;
+  overflow:hidden;
+  margin-bottom:20px;
+  background:#F6EEFF;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
 }
-.invite-text{
-  font-size:1rem;
-  text-align:center;
-  color:#6C3483;
-  margin-bottom:12px;
-}
-.names{
-  font-size:2.4rem;
-  font-weight:bold;
+.photo-placeholder{
   color:#7D3C98;
   text-align:center;
-  font-style:italic;
-  margin-bottom:12px;
+  padding:20px;
 }
-.and-text{
+.photo-placeholder span{
+  font-size:3rem;
+  display:block;
+  margin-bottom:10px;
+}
+
+/* TEXT STYLES */
+.top-line{
+  text-align:center;
+  font-size:0.9rem;
+  text-transform:uppercase;
+  letter-spacing:1.5px;
+  color:#6C3483;
+  margin-bottom:5px;
+}
+.invite-line{
+  text-align:center;
+  font-size:0.95rem;
+  color:#6C3483;
+  margin-bottom:15px;
+}
+.names{
+  text-align:center;
+  font-size:2.6rem;
+  color:#7D3C98;
+  font-style:italic;
+  font-weight:bold;
+  margin-bottom:5px;
+  line-height:1.2;
+}
+.and{
+  font-size:1.3rem;
+  color:#D4AF37;
+  display:block;
+  margin:4px 0;
+}
+.divider{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  margin:15px 0;
+}
+.d-line{
+  width:70px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,#D4AF37,transparent);
+}
+.d-heart{
+  width:14px;
+  height:14px;
+  background:#D4AF37;
+  transform:rotate(45deg);
+  border-radius:2px 0 0 0;
+}
+
+/* DETAILS */
+.details-row{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  text-align:center;
+  margin:20px 0;
+}
+.detail-col{
+  flex:1;
+  min-width:120px;
+}
+.detail-icon{
   font-size:1.2rem;
   color:#D4AF37;
-  display:block;
-  margin:6px 0;
+  margin-bottom:5px;
 }
-.details{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  text-align:center;
-  margin:18px 0;
-  font-size:0.95rem;
+.detail-text{
+  font-size:0.9rem;
   color:#6C3483;
+  line-height:1.5;
 }
-.detail-item{
-  padding:10px;
-  border:1px solid #eee;
-  border-radius:8px;
-  background:#fffafd;
-}
-.detail-item i{
-  color:#D4AF37;
-  font-size:1.1rem;
-  display:block;
-  margin-bottom:4px;
-}
-.bottom-text{
+.bottom-msg{
   text-align:center;
-  font-size:0.95rem;
+  font-style:italic;
   color:#6C3483;
-  margin-bottom:12px;
+  margin-top:10px;
+  font-size:0.95rem;
 }
-.btn{
-  display:block;
-  width:100%;
-  max-width:260px;
-  margin:0 auto;
-  background:linear-gradient(135deg,#8E44AD,#D4AF37);
-  color:white;
-  text-decoration:none;
-  padding:12px;
-  border-radius:8px;
-  text-align:center;
-  font-size:1rem;
-}
-.btn:hover{
-  background:linear-gradient(135deg,#7D3C98,#C49A2F);
-}
-@media (min-width:768px){
-  .card{
-    padding:30px 24px 24px;
-  }
-  .photo-frame{
-    height:280px;
-  }
-  .names{
-    font-size:3.2rem;
-  }
-  .details{
-    font-size:1rem;
-  }
+
+@media (min-width:600px){
+  .card{padding:40px 35px 35px;}
+  .photo-box{height:300px;}
+  .names{font-size:3.2rem;}
+  .detail-text{font-size:1rem;}
 }
 </style>
 </head>
 <body>
 
-<div<[SILENT_never_used_51bce0c785ca2f68081bfa7d91973934]>
-<a href="https://menchie729.github.io/jan-jevelyn-wedding/">https://menchie729.github.io/jan-jevelyn-wedding/</a>
-</div>
+<div class="card">
+  <!-- Flowers sa 4 ka suok -->
+  <div class="flower flower-tl"></div>
+  <div class="flower flower-tr"></div>
+  <div class="flower flower-bl"></div>
+  <div class="flower flower-br"></div>
 
-<div class="wrapper">
-  <div class="card">
-    <div class="flower-corner flower-tl"></div>
-    <div class="flower-corner flower-tr"></div>
-    <div class="flower-corner flower-bl"></div>
-    <div class="flower-corner flower-br"></div>
-
-    <div class="photo-frame">
-      <!-- I-upload ang imong couple photo sa GitHub repo ug ilisi ang src filename -->
-      <img src="couple.jpg" alt="Jan & Jevelyn">
+  <!-- Photo Area -->
+  <div class="photo-box">
+    <div class="photo-placeholder">
+      <span>📷</span>
+      <p>Ibutang ang litrato diri</p>
+      <p style="font-size:0.8rem;margin-top:8px;color:#888;">I-upload ang photo isip "couple.jpg"</p>
     </div>
+  </div>
 
-    <p class="top-text">
-      Together with their families
-    </p>
+  <p class="top-line">Together with their families</p>
+  <p class="invite-line">You are cordially invited to the wedding of</p>
 
-    <p class="invite-text">
-      You are cordially invited to the wedding of
-    </p>
+  <h1 class="names">
+    Ian
+    <span class="and">and</span>
+    Jevelyn
+  </h1>
 
-    <h1 class="names">
-      Jan<span class="and-text">and</span>Jevelyn
-    </h1>
+  <div class="divider">
+    <span class="d-line"></span>
+    <span class="d-heart"></span>
+    <span class="d-line"></span>
+  </div>
 
-    <div class="details">
-      <div class="detail-item">
-        <i>📅</i>
+  <div class="details-row">
+    <div class="detail-col">
+      <div class="detail-icon">📅</div>
+      <div class="detail-text">
         October 5, 2026
       </div>
-      <div class="detail-item">
-        <i>⏰</i>
-        Monday — 2:00 PM
-      </div>
-      <div class="detail-item">
-        <i>📍</i>
-        Old Stone Inn<br>Cebu City, Philippines
+    </div>
+    <div class="detail-col">
+      <div class="detail-icon">⏰</div>
+      <div class="detail-text">
+        Monday<br>2:00 PM
       </div>
     </div>
-
-    <p class="bottom-text">
-      We look forward to celebrating this special day with you!
-    </p>
-
-    <a class="btn" href="https://menchie729.github.io/jan-jevelyn-wedding/">
-      View Full Invitation
-    </a>
+    <div class="detail-col">
+      <div class="detail-icon">📍</div>
+      <div class="detail-text">
+        Old Stone Inn<br>Canada
+      </div>
+    </div>
   </div>
+
+  <p class="bottom-msg">
+    We look forward to celebrating this special day with you!
+  </p>
 </div>
 
 </body>
