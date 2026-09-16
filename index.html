@@ -3,259 +3,253 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ian & Jevelyn Wedding</title>
+<title>Ian & Jevelyn Wedding Invitation</title>
 <style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-html, body{
+*{margin:0;padding:0;box-sizing:border-box;}
+html,body{
   width:100%;
   height:100%;
   overflow:hidden;
-  font-family:Georgia, serif;
+  font-family:Georgia, 'Times New Roman', serif;
 }
 
-/* Full-screen background image from your uploaded picture */
+/* BACKGROUND — light purple same as original design */
 .bg{
   position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background-image:url('https://i.imgur.com/9XkQZJL.jpg');
-  background-size:cover;
-  background-position:center;
+  top:0;left:0;
+  width:100%;height:100%;
+  background:linear-gradient(135deg, #FDF8FF, #EDE4F7);
   z-index:0;
 }
 
-/* Dark overlay para makita ang text */
-.overlay{
+/* GOLD BORDER FRAME */
+.frame-outer{
   position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  background:rgba(128,0,128,0.35);
-  z-index:1;
-}
-
-/* Top right flower corner */
-.flower-top-right{
-  position:absolute;
-  top:0;
-  right:0;
-  width:220px;
-  height:220px;
-  background:
-    radial-gradient(circle at 70% 30%, #9B59B6 0%, #8E44AD 35%, transparent 65%),
-    radial-gradient(circle at 85% 15%, #F7DC6F 0%, #D4AF37 35%, transparent 60%),
-    radial-gradient(circle at 55% 50%, #fff 0%, transparent 50%);
-  clip-path:polygon(30% 0, 100% 0, 100% 70%, 30% 70%);
-  z-index:2;
-}
-
-/* Bottom left flower corner */
-.flower-bottom-left{
-  position:absolute;
-  bottom:0;
-  left:0;
-  width:220px;
-  height:220px;
-  background:
-    radial-gradient(circle at 30% 70%, #9B59B6 0%, #8E44AD 35%, transparent 65%),
-    radial-gradient(circle at 15% 85%, #F7DC6F 0%, #D4AF37 35%, transparent 60%),
-    radial-gradient(circle at 50% 55%, #fff 0%, transparent 50%);
-  clip-path:polygon(0 30%, 70% 30%, 70% 100%, 0 100%);
-  z-index:2;
-}
-
-/* Border frame */
-.frame{
-  position:absolute;
-  top:20px;
-  left:20px;
-  right:20px;
-  bottom:20px;
+  top:15px;left:15px;right:15px;bottom:15px;
   border:2px solid #D4AF37;
-  border-radius:12px;
-  box-shadow:inset 0 0 25px rgba(128,0,128,0.15);
-  z-index:3;
+  border-radius:10px;
+  z-index:2;
 }
-
 .frame-inner{
   position:absolute;
-  top:30px;
-  left:30px;
-  right:30px;
-  bottom:30px;
-  border:1px solid rgba(212,175,55,0.45);
-  border-radius:8px;
-  z-index:3;
+  top:25px;left:25px;right:25px;bottom:25px;
+  border:1px solid rgba(212,175,55,0.4);
+  border-radius:6px;
+  z-index:2;
 }
 
-/* Center text content */
+/* FLOWER DECORATIONS — 4 corners same as original */
+.flower{
+  position:absolute;
+  width:140px;height:140px;
+  z-index:3;
+  pointer-events:none;
+}
+.flower-tl{
+  top:0;left:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 25% 25%, #9B59B6 0%, #8E44AD 40%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 45% 20%, #B977D1 0%, #9B59B6 40%, transparent 70%),
+    radial-gradient(circle at 35% 40%, #F7DC6F 0%, #D4AF37 40%, transparent 60%),
+    radial-gradient(circle at 20% 35%, #fff 0%, transparent 50%);
+  clip-path:polygon(0 0, 70% 0, 70% 70%, 0 70%);
+}
+.flower-tr{
+  top:0;right:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 75% 25%, #9B59B6 0%, #8E44AD 40%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 55% 20%, #B977D1 0%, #9B59B6 40%, transparent 70%),
+    radial-gradient(circle at 65% 40%, #F7DC6F 0%, #D4AF37 40%, transparent 60%),
+    radial-gradient(circle at 80% 35%, #fff 0%, transparent 50%);
+  clip-path:polygon(30% 0, 100% 0, 100% 70%, 30% 70%);
+}
+.flower-bl{
+  bottom:0;left:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 25% 75%, #9B59B6 0%, #8E44AD 40%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 45% 80%, #B977D1 0%, #9B59B6 40%, transparent 70%),
+    radial-gradient(circle at 35% 60%, #F7DC6F 0%, #D4AF37 40%, transparent 60%),
+    radial-gradient(circle at 20% 65%, #fff 0%, transparent 50%);
+  clip-path:polygon(0 30%, 70% 30%, 70% 100%, 0 100%);
+}
+.flower-br{
+  bottom:0;right:0;
+  background:
+    radial-gradient(ellipse 50% 40% at 75% 75%, #9B59B6 0%, #8E44AD 40%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 55% 80%, #B977D1 0%, #9B59B6 40%, transparent 70%),
+    radial-gradient(circle at 65% 60%, #F7DC6F 0%, #D4AF37 40%, transparent 60%),
+    radial-gradient(circle at 80% 65%, #fff 0%, transparent 50%);
+  clip-path:polygon(30% 30%, 100% 30%, 100% 100%, 30% 100%);
+}
+
+/* PHOTO AREA — dali ra nimo ilisan */
+.photo-container{
+  width:100%;
+  max-width:340px;
+  height:240px;
+  border-radius:8px;
+  border:2px solid #D4AF37;
+  overflow:hidden;
+  margin-bottom:18px;
+  background:#F6EEFF;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+.photo-container img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+.photo-placeholder{
+  text-align:center;
+  color:#7D3C98;
+}
+.photo-placeholder span{font-size:3rem;display:block;margin-bottom:8px;}
+
+/* TEXT STYLES */
 .content{
   position:absolute;
-  top:50%;
-  left:50%;
+  top:50%;left:50%;
   transform:translate(-50%,-50%);
   text-align:center;
   z-index:4;
   width:90%;
-  max-width:700px;
+  max-width:480px;
 }
-
-.content h1{
-  font-size:clamp(1.6rem,4.5vw,2.2rem);
-  color:#fff;
-  letter-spacing:0.18em;
+.top-text{
+  font-size:0.9rem;
   text-transform:uppercase;
-  margin-bottom:1rem;
-  text-shadow:0 2px 8px rgba(0,0,0,0.6);
+  letter-spacing:1.5px;
+  color:#6C3483;
+  margin-bottom:5px;
 }
-
+.invite-text{
+  font-size:0.95rem;
+  color:#6C3483;
+  margin-bottom:15px;
+}
 .names{
-  font-size:clamp(2.8rem,7vw,4rem);
-  color:#fff;
-  line-height:1.3;
-  margin:1.5rem 0;
+  font-size:clamp(2.4rem,8vw,3.4rem);
+  color:#7D3C98;
   font-style:italic;
-  text-shadow:0 2px 10px rgba(0,0,0,0.6);
+  font-weight:bold;
+  margin-bottom:5px;
+  line-height:1.2;
 }
-
 .and{
-  color:#FFD700;
+  font-size:1.3rem;
+  color:#D4AF37;
   display:block;
-  margin:8px 0;
-  font-size:1.2em;
+  margin:4px 0;
 }
-
 .divider{
   display:flex;
   align-items:center;
   justify-content:center;
-  gap:12px;
-  margin:1.5rem 0;
+  gap:10px;
+  margin:15px 0;
 }
-
-.line{
-  width:80px;
-  height:2px;
-  background:linear-gradient(90deg, transparent, #FFD700, transparent);
+.d-line{
+  width:70px;
+  height:1px;
+  background:linear-gradient(90deg,transparent,#D4AF37,transparent);
 }
-
-.heart{
-  width:14px;
-  height:14px;
-  background:#FFD700;
+.d-heart{
+  width:12px;
+  height:12px;
+  background:#D4AF37;
   transform:rotate(45deg);
   border-radius:2px 0 0 0;
 }
-
-.info{
-  font-size:clamp(1rem,2.5vw,1.2rem);
-  color:#fff;
-  line-height:1.9;
-  margin-top:1.5rem;
-  text-shadow:0 2px 8px rgba(0,0,0,0.6);
+.details-row{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  gap:15px;
+  margin:20px 0;
+}
+.detail-col{
+  flex:1;
+  min-width:110px;
+}
+.detail-icon{
+  font-size:1.1rem;
+  color:#D4AF37;
+  margin-bottom:4px;
+}
+.detail-text{
+  font-size:0.9rem;
+  color:#6C3483;
+  line-height:1.5;
+}
+.bottom-msg{
+  font-style:italic;
+  color:#6C3483;
+  margin-top:8px;
+  font-size:0.95rem;
 }
 
-/* Navigation buttons */
+/* PAGES */
+.page{
+  position:absolute;
+  top:0;left:0;
+  width:100%;height:100%;
+  display:none;
+  z-index:1;
+}
+.page.active{display:block;}
+
+/* NAVIGATION */
 .nav{
   position:absolute;
-  bottom:35px;
+  bottom:20px;
   left:50%;
   transform:translateX(-50%);
   display:flex;
-  gap:18px;
+  gap:15px;
   z-index:5;
 }
-
 .nav button{
   background:linear-gradient(135deg,#8E44AD,#D4AF37);
   color:white;
   border:none;
-  padding:12px 28px;
-  font-size:1rem;
+  padding:10px 24px;
+  font-size:0.95rem;
   border-radius:6px;
   cursor:pointer;
-  box-shadow:0 4px 15px rgba(0,0,0,0.3);
 }
-
 .nav button:hover{
-  background:linear-gradient(135deg,#7D3C98,#FFD700);
-}
-
-/* Page box */
-.page{
-  position:absolute;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
-  display:none;
-  z-index:10;
-}
-
-.page.active{
-  display:block;
+  background:linear-gradient(135deg,#7D3C98,#C49A2F);
 }
 </style>
 </head>
 <body>
 
-<!-- PAGE 1 -->
+<!-- PAGE 1: WELCOME -->
 <section class="page active" id="p1">
   <div class="bg"></div>
-  <div class="overlay"></div>
-  <div class="flower-top-right"></div>
-  <div class="flower-bottom-left"></div>
-  <div class="frame"></div>
+  <div class="frame-outer"></div>
   <div class="frame-inner"></div>
+  <div class="flower flower-tl"></div>
+  <div class="flower flower-tr"></div>
+  <div class="flower flower-bl"></div>
+  <div class="flower flower-br"></div>
 
   <div class="content">
-    <h1>You Are Invited</h1>
-    <p style="color:#fff; font-size:clamp(1rem,2.5vw,1.15rem); line-height:1.8; text-shadow:0 2px 8px rgba(0,0,0,0.6);">
-      Together with their families<br>request the honor of your presence
-    </p>
-    <div class="divider">
-      <span class="line"></span>
-      <span class="heart"></span>
-      <span class="line"></span>
-    </div>
-  </div>
-
-  <div class="nav">
-    <button onclick="prevPage()">PREV</button>
-    <button onclick="nextPage()">NEXT</button>
-  </div>
-</section>
-
-<!-- PAGE 2 -->
-<section class="page" id="p2">
-  <div class="bg"></div>
-  <div class="overlay"></div>
-  <div class="flower-top-right"></div>
-  <div class="flower-bottom-left"></div>
-  <div class="frame"></div>
-  <div class="frame-inner"></div>
-
-  <div class="content">
-    <div class="names">
+    <p class="top-text">Together with their families</p>
+    <p class="invite-text">You are cordially invited to the wedding of</p>
+    <h1 class="names">
       Ian
       <span class="and">and</span>
       Jevelyn
-    </div>
+    </h1>
     <div class="divider">
-      <span class="line"></span>
-      <span class="heart"></span>
-      <span class="line"></span>
+      <span class="d-line"></span>
+      <span class="d-heart"></span>
+      <span class="d-line"></span>
     </div>
-    <p style="color:#fff; font-size:clamp(1rem,2.5vw,1.15rem); line-height:1.8; text-shadow:0 2px 8px rgba(0,0,0,0.6);">
-      We are getting married<br>and we want you to be there
-    </p>
+    <p class="bottom-msg">Swipe or tap Next to continue</p>
   </div>
 
   <div class="nav">
@@ -264,26 +258,73 @@ html, body{
   </div>
 </section>
 
-<!-- PAGE 3 -->
+<!-- PAGE 2: PHOTO & NAMES -->
+<section class="page" id="p2">
+  <div class="bg"></div>
+  <div class="frame-outer"></div>
+  <div class="frame-inner"></div>
+  <div class="flower flower-tl"></div>
+  <div class="flower flower-tr"></div>
+  <div class="flower flower-bl"></div>
+  <div class="flower flower-br"></div>
+
+  <div class="content">
+    <div class="photo-container">
+      <!-- ✅ I-upload ang imong photo isip "couple.jpg" sa GitHub -->
+      <img src="couple.jpg" alt="Ian & Jevelyn" onerror="this.style.display='none';this.nextElementSibling.style.display='flex';">
+      <div class="photo-placeholder" style="display:none;">
+        <span>📷</span>
+        <p>I-upload ang photo isip "couple.jpg"</p>
+      </div>
+    </div>
+    <h1 class="names" style="font-size:clamp(2rem,6vw,2.8rem);">
+      Ian
+      <span class="and">and</span>
+      Jevelyn
+    </h1>
+    <div class="divider">
+      <span class="d-line"></span>
+      <span class="d-heart"></span>
+      <span class="d-line"></span>
+    </div>
+  </div>
+
+  <div class="nav">
+    <button onclick="prevPage()">PREV</button>
+    <button onclick="nextPage()">NEXT</button>
+  </div>
+</section>
+
+<!-- PAGE 3: DETAILS -->
 <section class="page" id="p3">
   <div class="bg"></div>
-  <div class="overlay"></div>
-  <div class="flower-top-right"></div>
-  <div class="flower-bottom-left"></div>
-  <div class="frame"></div>
+  <div class="frame-outer"></div>
   <div class="frame-inner"></div>
+  <div class="flower flower-tl"></div>
+  <div class="flower flower-tr"></div>
+  <div class="flower flower-bl"></div>
+  <div class="flower flower-br"></div>
 
   <div class="content">
-    <h1>When & Where</h1>
+    <h2 style="font-size:1.4rem;color:#7D3C98;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;">When & Where</h2>
     <div class="divider">
-      <span class="line"></span>
-      <span class="heart"></span>
-      <span class="line"></span>
+      <span class="d-line"></span>
+      <span class="d-heart"></span>
+      <span class="d-line"></span>
     </div>
-    <div class="info">
-      📅 October 5, 2026<br><br>
-      ⏰ Monday — 2:00 PM<br><br>
-      📍 Old Stone Inn<br>Canada
+    <div class="details-row">
+      <div class="detail-col">
+        <div class="detail-icon">📅</div>
+        <div class="detail-text">October 5, 2026</div>
+      </div>
+      <div class="detail-col">
+        <div class="detail-icon">⏰</div>
+        <div class="detail-text">Monday<br>2:00 PM</div>
+      </div>
+      <div class="detail-col">
+        <div class="detail-icon">📍</div>
+        <div class="detail-text">Old Stone Inn<br>Canada</div>
+      </div>
     </div>
   </div>
 
@@ -293,29 +334,28 @@ html, body{
   </div>
 </section>
 
-<!-- PAGE 4 -->
+<!-- PAGE 4: CLOSING -->
 <section class="page" id="p4">
   <div class="bg"></div>
-  <div class="overlay"></div>
-  <div class="flower-top-right"></div>
-  <div class="flower-bottom-left"></div>
-  <div class="frame"></div>
+  <div class="frame-outer"></div>
   <div class="frame-inner"></div>
+  <div class="flower flower-tl"></div>
+  <div class="flower flower-tr"></div>
+  <div class="flower flower-bl"></div>
+  <div class="flower flower-br"></div>
 
   <div class="content">
-    <h1>With Love</h1>
+    <h2 style="font-size:1.4rem;color:#7D3C98;text-transform:uppercase;letter-spacing:2px;margin-bottom:10px;">With Love</h2>
     <div class="divider">
-      <span class="line"></span>
-      <span class="heart"></span>
-      <span class="line"></span>
+      <span class="d-line"></span>
+      <span class="d-heart"></span>
+      <span class="d-line"></span>
     </div>
-    <p style="color:#fff; font-size:clamp(1rem,2.5vw,1.15rem); line-height:1.8; font-style:italic; text-shadow:0 2px 8px rgba(0,0,0,0.6);">
+    <p class="bottom-msg" style="font-size:1.1rem;line-height:1.8;">
       "Two souls, one heart."<br><br>
       We look forward to celebrating<br>this special day with you!
     </p>
-    <p style="color:#FFD700; font-size:0.95rem; margin-top:1rem; text-shadow:0 2px 8px rgba(0,0,0,0.6);">
-      — Ian & Jevelyn —
-    </p>
+    <p style="margin-top:20px;color:#D4AF37;font-style:italic;">— Ian & Jevelyn —</p>
   </div>
 
   <div class="nav">
@@ -329,22 +369,29 @@ let currentPage = 1;
 let totalPages = 4;
 
 function showPage(page){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById('p'+page).classList.add('active');
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('p' + page).classList.add('active');
   currentPage = page;
 }
 
 function nextPage(){
-  if(currentPage < totalPages){
-    showPage(currentPage + 1);
-  }
+  if(currentPage < totalPages) showPage(currentPage + 1);
 }
 
 function prevPage(){
-  if(currentPage > 1){
-    showPage(currentPage - 1);
-  }
+  if(currentPage > 1) showPage(currentPage - 1);
 }
+
+// Swipe support
+let touchStartY = 0;
+document.addEventListener('touchstart', e => {
+  touchStartY = e.touches[0].clientY;
+}, {passive:true});
+document.addEventListener('touchend', e => {
+  const touchEndY = e.changedTouches[0].clientY;
+  if(touchStartY - touchEndY > 60) nextPage();
+  if(touchEndY - touchStartY > 60) prevPage();
+}, {passive:true});
 </script>
 
 </body>
