@@ -7,63 +7,92 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
 html,body{width:100%;height:100%;overflow:hidden;font-family:Georgia,serif;}
-.bg{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#FDF8FF,#EDE4F7);z-index:0;}
+.bg{position:absolute;inset:0;width:100%;height:100%;background:linear-gradient(135deg,#FFFAFF,#F3E9FF);z-index:0;}
 
-/* BUWAK — sakto sa tanan suok */
-.flower{position:absolute;width:130px;height:130px;z-index:8;pointer-events:none;}
+/* Elegant wedding flowers: smaller, taller, white/off-white with gold */
+.flower{position:absolute;width:70px;height:86px;z-index:8;pointer-events:none;}
 .flower-tl{top:0;left:0;}
-.flower-tr{top:0;right:0;transform:scaleX(-1);}
-.flower-bl{bottom:0;left:0;transform:scaleY(-1);}
-.flower-br{bottom:0;right:0;transform:scaleX(-1) scaleY(-1);}
+.flower-tr{top:0;right:0;}
+.flower-bl{bottom:0;left:0;}
+.flower-br{bottom:0;right:0;}
 
-.frame-outer{position:absolute;top:15px;left:15px;right:15px;bottom:15px;border:2px solid #D4AF37;border-radius:10px;z-index:2;}
-.frame-inner{position:absolute;top:25px;left:25px;right:25px;bottom:25px;border:1px solid rgba(212,175,55,0.4);border-radius:6px;z-index:2;}
+.frame-outer{position:absolute;inset:12px;border:2px solid #D4AF37;border-radius:10px;z-index:2;}
+.frame-inner{position:absolute;inset:22px;border:1px solid rgba(212,175,55,0.35);border-radius:6px;z-index:2;}
 
-.content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:5;width:90%;max-width:480px;}
+.content{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;z-index:5;padding:20px;}
 
 .photo-container{width:100%;max-width:300px;height:200px;border-radius:8px;border:2px solid #D4AF37;overflow:hidden;margin:0 auto 18px;background:#F6EEFF;}
 .photo-container img{width:100%;height:100%;object-fit:cover;}
 
-.names{font-size:clamp(2.4rem,8vw,3.2rem);color:#7D3C98;font-style:italic;font-weight:bold;margin-bottom:5px;line-height:1.2;}
-.and{color:#D4AF37;display:block;margin:4px 0;font-size:1.3rem;}
-.divider{display:flex;align-items:center;justify-content:center;gap:10px;margin:15px 0;}
+.names{font-size:clamp(2.2rem,7vw,3rem);color:#7D3C98;font-style:italic;font-weight:bold;line-height:1.1;}
+.and{color:#D4AF37;display:block;margin:6px 0;font-size:1.2rem;}
+.divider{display:flex;align-items:center;gap:10px;margin:15px 0;}
 .d-line{width:70px;height:1px;background:linear-gradient(90deg,transparent,#D4AF37,transparent);}
-.d-heart{width:12px;height:12px;background:#D4AF37;transform:rotate(45deg);border-radius:2px 0 0 0;}
+.d-heart{width:12px;height:12px;background:#D4AF37;transform:rotate(45deg);flex-shrink:0;}
 
-.top-text{font-size:0.9rem;text-transform:uppercase;letter-spacing:1.5px;color:#6C3483;margin-bottom:5px;}
-.invite-text{font-size:0.95rem;color:#6C3483;margin-bottom:15px;}
-.details-row{display:flex;flex-wrap:wrap;justify-content:center;gap:15px;margin:20px 0;}
-.detail-col{flex:1;min-width:110px;}
-.detail-icon{font-size:1.1rem;color:#D4AF37;margin-bottom:4px;}
+.top-text{font-size:0.9rem;text-transform:uppercase;letter-spacing:1.5px;color:#6C3483;margin-bottom:6px;}
+.invite-text{font-size:0.95rem;color:#6C3483;margin-bottom:15px;max-width:320px;}
+.details-row{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;margin:20px 0;}
+.detail-col{min-width:100px;}
+.detail-icon{font-size:1.2rem;color:#D4AF37;margin-bottom:4px;}
 .detail-text{font-size:0.9rem;color:#6C3483;line-height:1.5;}
-.bottom-msg{font-style:italic;color:#6C3483;margin-top:8px;font-size:0.95rem;}
+.bottom-msg{font-style:italic;color:#6C3483;margin-top:10px;font-size:0.95rem;line-height:1.6;max-width:320px;}
 
-.page{position:absolute;top:0;left:0;width:100%;height:100%;display:none;z-index:1;}
+.page{position:absolute;inset:0;width:100%;height:100%;display:none;z-index:1;}
 .page.active{display:block;}
 
 .nav{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:15px;z-index:10;}
 .nav button{background:linear-gradient(135deg,#8E44AD,#D4AF37);color:white;border:none;padding:10px 24px;font-size:0.95rem;border-radius:6px;cursor:pointer;}
+
+@media (max-width: 480px){
+  .flower{width:55px;height:68px;}
+  .photo-container{max-width:260px;height:170px;}
+  .nav button{padding:9px 20px;font-size:0.9rem;}
+}
 </style>
 </head>
 <body>
 
-<!-- BUWAK DESIGN — dili guba, walay itom -->
-<svg style="display:none;" id="f" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
-  <path d="M65 8 C85 23 98 43 88 63 C78 83 58 88 43 78 C28 68 23 48 33 28 C43 8 50 12 65 8Z" fill="#9B59B6"/>
-  <path d="M93 38 C113 53 118 78 103 98 C88 118 63 123 48 108 C33 93 38 68 53 48 C68 28 83 23 93 38Z" fill="#B977D1"/>
-  <path d="M33 48 C53 63 58 88 43 108 C28 128 3 133 -12 118 C-27 103 -22 78 -7 58 C8 38 23 33 33 48Z" fill="#9B59B6"/>
-  <path d="M43 18 C63 33 68 58 53 78 C38 98 13 103 -2 88 C-17 73 -12 48 3 28 C18 8 33 3 43 18Z" fill="#B977D1"/>
-  <circle cx="65" cy="65" r="15" fill="#D4AF37"/>
-  <circle cx="65" cy="65" r="8" fill="#F7DC6F"/>
+<!-- Elegant White & Gold Wedding Flowers -->
+<svg class="flower flower-tl" viewBox="0 0 70 86" xmlns="http://www.w3.org/2000/svg">
+  <path d="M35 5 C42 12 48 22 44 32 C40 42 30 45 22 38 C14 31 12 21 18 11 C24 5 30 8 35 5Z" fill="#FFFAFF" stroke="#E8D8A6" stroke-width="1"/>
+  <path d="M50 22 C57 32 60 45 54 55 C48 65 38 68 30 60 C22 52 24 39 30 29 C36 19 44 15 50 22Z" fill="#FFF5FF" stroke="#E8D8A6" stroke-width="1"/>
+  <path d="M20 32 C27 42 30 55 24 65 C18 75 8 78 0 70 C-8 62 -6 49 0 39 C6 29 14 25 20 32Z" fill="#FFFAFF" stroke="#E8D8A6" stroke-width="1"/>
+  <path d="M25 12 C32 22 35 35 29 45 C23 55 13 58 5 50 C-3 42 -1 29 5 19 C11 9 19 5 25 12Z" fill="#FFF5FF" stroke="#E8D8A6" stroke-width="1"/>
+  <circle cx="35" cy="45" r="8" fill="#D4AF37"/>
+  <circle cx="35" cy="45" r="4" fill="#FFEEB3"/>
 </svg>
 
-<!-- PAHINA 1 -->
+<svg class="flower flower-tr" viewBox="0 0 70 86" xmlns="http://www.w3.org/2000/svg">
+  <path d="M35 5 C42 12 48 22 44 32 C40 42 30 45 22 38 C14 31 12 21 18 11 C24 5 30 8 35 5Z" fill="#FFFAFF" stroke="#E8D8A6" stroke-width="1"/>
+  <path d="M50 22 C57 32 60 45 54 55 C48 65 38 68 30 60 C22 52 24 39 30 29 C36 19 44 15 50 22Z" fill="#FFF5FF" stroke="#E8D8A6" stroke-width="1"/>
+  <path d="M20 32 C27 42 30 55 24 65 C18 75 8 78 0 70 C-8 62 -6 49 0 39 C6 29 14 25 20 32Z" fill="#FFFAFF" stroke="#E8D8A6" stroke-width="1"/>
+  <path d="M25 12 C32 22 35 35 29 45 C23 55 13 58 5 50 C-3 42 -1 29 5 19 C11 9 19 5 25 12Z" fill="#FFF5FF" stroke="#E8D8A6" stroke-width="1"/>
+  <circle cx="35" cy="45" r="8" fill="#D4AF37"/>
+  <circle cx="35" cy="45" r="4" fill="#FFEEB3"/>
+</svg>
+
+<svg class="flower flower-bl" viewBox="0 0 70 86" xmlns="http://www.w3.org/2000/svg">
+  <path d="M35 5 C42 12 48 22 44 32 C40 42 30 45 22 38 C14 31 12 21 18 11 C24 5 30 8 35 5Z" fill="#FFFAFF" stroke="#E8D8A6" stroke-width="1"/>
+  <path d="M50 22 C57 32 60 45 54 55 C48 65 38 68 30 60 C22 52 24 39 30 29 C36 19 44 15 50 22Z" fill="#FFF5FF" stroke="#E8D8A6" stroke-width="1"/>
+  <path d="M20 32 C27 42 30 55 24 65 C18 75 8 78 0 70 C-8 62 -6 49 0 39 C6 29 14 25 20 32Z" fill="#FFFAFF" stroke="#E8D8A6" stroke-width="1"/>
+  <path d="M25 12 C32 22 35 35 29 45 C23 55 13 58 5 50 C-3 42 -1 29 5 19 C11 9 19 5 25 12Z" fill="#FFF5FF" stroke="#E8D8A6" stroke-width="1"/>
+  <circle cx="35" cy="45" r="8" fill="#D4AF37"/>
+  <circle cx="35" cy="45" r="4" fill="#FFEEB3"/>
+</svg>
+
+<svg class="flower flower-br" viewBox="0 0 70 86" xmlns="http://www.w3.org/2000/svg">
+  <path d="M35 5 C42 12 48 22 44 32 C40 42 30 45 22 38 C14 31 12 21 18 11 C24 5 30 8 35 5Z" fill="#FFFAFF" stroke="#E8D8A6" stroke-width="1"/>
+  <path d="M50 22 C57 32 60 45 54 55 C48 65 38 68 30 60 C22 52 24 39 30 29 C36 19 44 15 50 22Z" fill="#FFF5FF" stroke="#E8D8A6" stroke-width="1"/>
+  <path d="M20 32 C27 42 30 55 24 65 C18 75 8 78 0 70 C-8 62 -6 49 0 39 C6 29 14 25 20 32Z" fill="#FFFAFF" stroke="#E8D8A6" stroke-width="1"/>
+  <path d="M25 12 C32 22 35 35 29 45 C23 55 13 58 5 50 C-3 42 -1 29 5 19 C11 9 19 5 25 12Z" fill="#FFF5FF" stroke="#E8D8A6" stroke-width="1"/>
+  <circle cx="35" cy="45" r="8" fill="#D4AF37"/>
+  <circle cx="35" cy="45" r="4" fill="#FFEEB3"/>
+</svg>
+
+<!-- PAGE 1 -->
 <section class="page active" id="p1">
   <div class="bg"></div>
-  <div class="flower flower-tl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
-  <div class="flower flower-tr"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
-  <div class="flower flower-bl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
-  <div class="flower flower-br"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
   <div class="frame-outer"></div>
   <div class="frame-inner"></div>
 
@@ -85,19 +114,15 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Georgia,serif;}
   </div>
 </section>
 
-<!-- PAHINA 2 — NAA NA ANG PICTURE -->
+<!-- PAGE 2 -->
 <section class="page" id="p2">
   <div class="bg"></div>
-  <div class="flower flower-tl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
-  <div class="flower flower-tr"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
-  <div class="flower flower-bl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
-  <div class="flower flower-br"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
   <div class="frame-outer"></div>
   <div class="frame-inner"></div>
 
   <div class="content">
     <div class="photo-container">
-      <img src="https://i.postimg.cc/0QqZb3K/couple.jpg" alt="Ian & Jevelyn">
+      <img src="couple.jpg" alt="Ian & Jevelyn" onerror="this.src='https://i.postimg.cc/0QqZb3K/couple.jpg'">
     </div>
     <h1 class="names" style="font-size:clamp(2rem,6vw,2.8rem);">Ian<span class="and">and</span>Jevelyn</h1>
     <div class="divider">
@@ -113,13 +138,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Georgia,serif;}
   </div>
 </section>
 
-<!-- PAHINA 3 -->
+<!-- PAGE 3 -->
 <section class="page" id="p3">
   <div class="bg"></div>
-  <div class="flower flower-tl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
-  <div class="flower flower-tr"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
-  <div class="flower flower-bl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
-  <div class="flower flower-br"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
   <div class="frame-outer"></div>
   <div class="frame-inner"></div>
 
@@ -154,13 +175,9 @@ html,body{width:100%;height:100%;overflow:hidden;font-family:Georgia,serif;}
   </div>
 </section>
 
-<!-- PAHINA 4 -->
+<!-- PAGE 4 -->
 <section class="page" id="p4">
   <div class="bg"></div>
-  <div class="flower flower-tl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
-  <div class="flower flower-tr"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
-  <div class="flower flower-bl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
-  <div class="flower flower-br"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
   <div class="frame-outer"></div>
   <div class="frame-inner"></div>
 
