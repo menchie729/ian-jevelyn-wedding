@@ -3,264 +3,224 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ian & Jevelyn Wedding</title>
+<title>Jan & Jevelyn Wedding</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;scroll-snap-type:y mandatory;}
 body{
   font-family:Georgia,serif;
   background:linear-gradient(135deg,#FDF8FF,#F6EEFF);
   color:#4B2E5A;
+  line-height:1.6;
 }
-.slide{
-  width:100vw;
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
+.wrapper{
+  max-width:600px;
+  margin:0 auto;
+  padding:18px;
+}
+.card{
   position:relative;
-  padding:30px 20px 80px;
-  scroll-snap-align:start;
-}
-/* PURPLE GOLD FRAME */
-.frame{
-  position:absolute;
-  top:18px;
-  left:18px;
-  right:18px;
-  bottom:65px;
+  background:#fffef9;
   border:2px solid #D4AF37;
+  border-radius:12px;
+  padding:22px 18px 18px;
+  overflow:hidden;
+}
+/* TOP PHOTO */
+.photo-frame{
+  width:100%;
+  height:240px;
   border-radius:8px;
-  box-shadow:inset 0 0 18px rgba(128,0,128,0.08);
+  overflow:hidden;
+  border:1px solid #D4AF37;
+  margin-bottom:18px;
 }
-.frame-inner{
-  position:absolute;
-  top:28px;
-  left:28px;
-  right:28px;
-  bottom:75px;
-  border:1px solid rgba(212,175,55,0.35);
-  border-radius:6px;
+.photo-frame img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
 }
-/* FLOWER CORNERS — CSS-only */
-.flower{
+/* FLOWER DECOR */
+.flower-corner{
   position:absolute;
-  width:90px;
-  height:90px;
-  z-index:2;
+  width:120px;
+  height:120px;
   pointer-events:none;
+  z-index:2;
 }
 .flower-tl{
-  top:12px;
-  left:12px;
-  background:radial-gradient(circle at 30% 30%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
-              radial-gradient(circle at 60% 20%,#F7DC6F 0%,#D4AF37 35%,transparent 60%),
-              radial-gradient(circle at 20% 60%,#fff 0%,transparent 50%);
-  clip-path:polygon(0 0,70% 0,70% 70%,0 70%);
+  top:0;
+  left:0;
+  background:radial-gradient(circle at 20% 20%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
+              radial-gradient(circle at 50% 10%,#fff 0%,transparent 50%),
+              radial-gradient(circle at 10% 50%,#F7DC6F 0%,#D4AF37 35%,transparent 60%);
+  clip-path:polygon(0 0,65% 0,65% 65%,0 65%);
 }
 .flower-tr{
-  top:12px;
-  right:12px;
-  background:radial-gradient(circle at 70% 30%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
-              radial-gradient(circle at 40% 20%,#F7DC6F 0%,#D4AF37 35%,transparent 60%),
-              radial-gradient(circle at 80% 60%,#fff 0%,transparent 50%);
-  clip-path:polygon(30% 0,100% 0,100% 70%,30% 70%);
+  top:0;
+  right:0;
+  background:radial-gradient(circle at 80% 20%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
+              radial-gradient(circle at 50% 10%,#fff 0%,transparent 50%),
+              radial-gradient(circle at 90% 50%,#F7DC6F 0%,#D4AF37 35%,transparent 60%);
+  clip-path:polygon(35% 0,100% 0,100% 65%,35% 65%);
 }
 .flower-bl{
-  bottom:62px;
-  left:12px;
-  background:radial-gradient(circle at 30% 70%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
-              radial-gradient(circle at 60% 80%,#F7DC6F 0%,#D4AF37 35%,transparent 60%),
-              radial-gradient(circle at 20% 40%,#fff 0%,transparent 50%);
-  clip-path:polygon(0 30%,70% 30%,70% 100%,0 100%);
+  bottom:0;
+  left:0;
+  background:radial-gradient(circle at 20% 80%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
+              radial-gradient(circle at 50% 90%,#fff 0%,transparent 50%),
+              radial-gradient(circle at 10% 50%,#F7DC6F 0%,#D4AF37 35%,transparent 60%);
+  clip-path:polygon(0 35%,65% 35%,65% 100%,0 100%);
 }
 .flower-br{
-  bottom:62px;
-  right:12px;
-  background:radial-gradient(circle at 70% 70%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
-              radial-gradient(circle at 40% 80%,#F7DC6F 0%,#D4AF37 35%,transparent 60%),
-              radial-gradient(circle at 80% 40%,#fff 0%,transparent 50%);
-  clip-path:polygon(30% 30%,100% 30%,100% 100%,30% 100%);
+  bottom:0;
+  right:0;
+  background:radial-gradient(circle at 80% 80%,#9B59B6 0%,#8E44AD 25%,#7D3C98 45%,transparent 70%),
+              radial-gradient(circle at 50% 90%,#fff 0%,transparent 50%),
+              radial-gradient(circle at 90% 50%,#F7DC6F 0%,#D4AF37 35%,transparent 60%);
+  clip-path:polygon(35% 35%,100% 35%,100% 100%,35% 100%);
 }
-h1{
-  font-size:clamp(1.8rem,5vw,3rem);
-  color:#8E44AD;
-  letter-spacing:0.2em;
-  text-transform:uppercase;
-  z-index:3;
+/* TEXT */
+.top-text{
+  font-size:0.9rem;
   text-align:center;
-}
-p{
-  font-size:clamp(1rem,2.5vw,1.2rem);
   color:#6C3483;
-  line-height:1.8;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:8px;
+}
+.invite-text{
+  font-size:1rem;
   text-align:center;
-  max-width:85%;
-  margin-top:1.5rem;
+  color:#6C3483;
+  margin-bottom:12px;
 }
 .names{
-  font-size:clamp(2rem,6vw,3.5rem);
+  font-size:2.4rem;
+  font-weight:bold;
   color:#7D3C98;
-  margin:1rem 0;
+  text-align:center;
+  font-style:italic;
+  margin-bottom:12px;
+}
+.and-text{
+  font-size:1.2rem;
+  color:#D4AF37;
+  display:block;
+  margin:6px 0;
 }
 .details{
-  font-size:clamp(1.1rem,2.5vw,1.3rem);
-  line-height:2;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  text-align:center;
+  margin:18px 0;
+  font-size:0.95rem;
   color:#6C3483;
 }
-.divider{
-  display:flex;
-  align-items:center;
-  gap:10px;
-  margin:1.5rem 0;
-  z-index:3;
+.detail-item{
+  padding:10px;
+  border:1px solid #eee;
+  border-radius:8px;
+  background:#fffafd;
 }
-.line{
-  width:60px;
-  height:2px;
-  background:linear-gradient(90deg,transparent,#D4AF37,transparent);
+.detail-item i{
+  color:#D4AF37;
+  font-size:1.1rem;
+  display:block;
+  margin-bottom:4px;
 }
-.dot{
-  width:12px;
-  height:12px;
-  background:#D4AF37;
-  border-radius:50%;
-  box-shadow:0 0 10px rgba(212,175,55,0.6);
+.bottom-text{
+  text-align:center;
+  font-size:0.95rem;
+  color:#6C3483;
+  margin-bottom:12px;
 }
-.nav{
-  position:fixed;
-  bottom:15px;
-  left:50%;
-  transform:translateX(-50%);
-  display:flex;
-  gap:15px;
-  z-index:999;
-}
-.nav button{
+.btn{
+  display:block;
+  width:100%;
+  max-width:260px;
+  margin:0 auto;
   background:linear-gradient(135deg,#8E44AD,#D4AF37);
   color:white;
-  border:none;
-  padding:12px 25px;
+  text-decoration:none;
+  padding:12px;
+  border-radius:8px;
+  text-align:center;
   font-size:1rem;
-  border-radius:5px;
-  cursor:pointer;
+}
+.btn:hover{
+  background:linear-gradient(135deg,#7D3C98,#C49A2F);
 }
 @media (min-width:768px){
-  .flower{width:130px;height:130px;}
-  .frame{top:30px;left:30px;right:30px;bottom:80px;}
-  .frame-inner{top:42px;left:42px;right:42px;bottom:92px;}
+  .card{
+    padding:30px 24px 24px;
+  }
+  .photo-frame{
+    height:280px;
+  }
+  .names{
+    font-size:3.2rem;
+  }
+  .details{
+    font-size:1rem;
+  }
 }
 </style>
 </head>
 <body>
 
-<!-- PAGE 1 -->
-<section class="slide" id="p1">
-<div class="frame"></div>
-<div class="frame-inner"></div>
-<div class="flower flower-tl"></div>
-<div class="flower flower-tr"></div>
-<div class="flower flower-bl"></div>
-<div class="flower flower-br"></div>
-<h1>YOU ARE INVITED!</h1>
-<p>Join us for a celebration of love, joy, and new beginnings.<br>Together with their families</p>
-<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
-</section>
-
-<!-- PAGE 2 -->
-<section class="slide" id="p2">
-<div class="frame"></div>
-<div class="frame-inner"></div>
-<div class="flower flower-tl"></div>
-<div class="flower flower-tr"></div>
-<div class="flower flower-bl"></div>
-<div class="flower flower-br"></div>
-<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
-<h1 class="names">Ian & Jevelyn</h1>
-<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
-</section>
-
-<!-- PAGE 3 -->
-<section class="slide" id="p3">
-<div class="frame"></div>
-<div class="frame-inner"></div>
-<div class="flower flower-tl"></div>
-<div class="flower flower-tr"></div>
-<div class="flower flower-bl"></div>
-<div class="flower flower-br"></div>
-<p>Please join us on</p>
-<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
-<p class="details">October 5, 2026<br>Monday — 2:00 PM</p>
-<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
-</section>
-
-<!-- PAGE 4 -->
-<section class="slide" id="p4">
-<div class="frame"></div>
-<div class="frame-inner"></div>
-<div class="flower flower-tl"></div>
-<div class="flower flower-tr"></div>
-<div class="flower flower-bl"></div>
-<div class="flower flower-br"></div>
-<p>At</p>
-<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
-<p class="details">Old Stone Inn<br>Canada</p>
-<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
-<p style="font-style:italic;">"Two souls, one heart."</p>
-</section>
-
-<!-- PAGE 5 -->
-<section class="slide" id="p5">
-<div class="frame"></div>
-<div class="frame-inner"></div>
-<div class="flower flower-tl"></div>
-<div class="flower flower-tr"></div>
-<div class="flower flower-bl"></div>
-<div class="flower flower-br"></div>
-<p>We Can't Wait</p>
-<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
-<h1 class="names">To Celebrate With You</h1>
-<div class="divider"><span class="line"></span><span class="dot"></span><span class="line"></span></div>
-<p>Your presence is the greatest gift.<br>See you there!</p>
-</section>
-
-<div class="nav">
-<button onclick="prevPage()">PREV</button>
-<button onclick="nextPage()">NEXT</button>
+<div<[SILENT_never_used_51bce0c785ca2f68081bfa7d91973934]>
+<a href="https://menchie729.github.io/jan-jevelyn-wedding/">https://menchie729.github.io/jan-jevelyn-wedding/</a>
 </div>
 
-<script>
-let currentPage = 1;
-const totalPages = 5;
+<div class="wrapper">
+  <div class="card">
+    <div class="flower-corner flower-tl"></div>
+    <div class="flower-corner flower-tr"></div>
+    <div class="flower-corner flower-bl"></div>
+    <div class="flower-corner flower-br"></div>
 
-function goToPage(pageNum) {
-  if(pageNum < 1 || pageNum > totalPages) return;
-  currentPage = pageNum;
-  document.getElementById('p' + currentPage).scrollIntoView({behavior: 'smooth'});
-}
+    <div class="photo-frame">
+      <!-- I-upload ang imong couple photo sa GitHub repo ug ilisi ang src filename -->
+      <img src="couple.jpg" alt="Jan & Jevelyn">
+    </div>
 
-function nextPage() {
-  if(currentPage < totalPages) goToPage(currentPage + 1);
-}
+    <p class="top-text">
+      Together with their families
+    </p>
 
-function prevPage() {
-  if(currentPage > 1) goToPage(currentPage - 1);
-}
+    <p class="invite-text">
+      You are cordially invited to the wedding of
+    </p>
 
-// Swipe support
-document.addEventListener('touchstart', e => {
-  window.startY = e.touches[0].clientY;
-}, {passive: true});
+    <h1 class="names">
+      Jan<span class="and-text">and</span>Jevelyn
+    </h1>
 
-document.addEventListener('touchend', e => {
-  if(!window.startY) return;
-  const endY = e.changedTouches[0].clientY;
-  if(window.startY - endY > 60) nextPage();
-  if(endY - window.startY > 60) prevPage();
-  window.startY = null;
-}, {passive: true});
-</script>
+    <div class="details">
+      <div class="detail-item">
+        <i>📅</i>
+        October 5, 2026
+      </div>
+      <div class="detail-item">
+        <i>⏰</i>
+        Monday — 2:00 PM
+      </div>
+      <div class="detail-item">
+        <i>📍</i>
+        Old Stone Inn<br>Cebu City, Philippines
+      </div>
+    </div>
+
+    <p class="bottom-text">
+      We look forward to celebrating this special day with you!
+    </p>
+
+    <a class="btn" href="https://menchie729.github.io/jan-jevelyn-wedding/">
+      View Full Invitation
+    </a>
+  </div>
+</div>
 
 </body>
 </html>
