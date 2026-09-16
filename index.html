@@ -6,84 +6,25 @@
 <title>Ian & Jevelyn Wedding Invitation</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;}
-html,body{
-  width:100%;
-  height:100%;
-  overflow:hidden;
-  font-family:Georgia, 'Times New Roman', serif;
-}
+html,body{width:100%;height:100%;overflow:hidden;font-family:Georgia,serif;}
+.bg{position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(135deg,#FDF8FF,#EDE4F7);z-index:0;}
 
-.bg{
-  position:absolute;
-  top:0;left:0;
-  width:100%;height:100%;
-  background:linear-gradient(135deg, #FDF8FF, #EDE4F7);
-  z-index:0;
-}
-
-/* TINUOD NGA FLOWER SA UGAT — dili square, dili emoji */
-.flower{
-  position:absolute;
-  width:140px;
-  height:140px;
-  z-index:8;
-  pointer-events:none;
-}
+/* BUWAK — sakto sa tanan suok */
+.flower{position:absolute;width:130px;height:130px;z-index:8;pointer-events:none;}
 .flower-tl{top:0;left:0;}
 .flower-tr{top:0;right:0;transform:scaleX(-1);}
 .flower-bl{bottom:0;left:0;transform:scaleY(-1);}
 .flower-br{bottom:0;right:0;transform:scaleX(-1) scaleY(-1);}
 
-.frame-outer{
-  position:absolute;
-  top:15px;left:15px;right:15px;bottom:15px;
-  border:2px solid #D4AF37;
-  border-radius:10px;
-  z-index:2;
-}
-.frame-inner{
-  position:absolute;
-  top:25px;left:25px;right:25px;bottom:25px;
-  border:1px solid rgba(212,175,55,0.4);
-  border-radius:6px;
-  z-index:2;
-}
+.frame-outer{position:absolute;top:15px;left:15px;right:15px;bottom:15px;border:2px solid #D4AF37;border-radius:10px;z-index:2;}
+.frame-inner{position:absolute;top:25px;left:25px;right:25px;bottom:25px;border:1px solid rgba(212,175,55,0.4);border-radius:6px;z-index:2;}
 
-.content{
-  position:absolute;
-  top:50%;left:50%;
-  transform:translate(-50%,-50%);
-  text-align:center;
-  z-index:5;
-  width:90%;
-  max-width:480px;
-}
+.content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);text-align:center;z-index:5;width:90%;max-width:480px;}
 
-.photo-container{
-  width:100%;
-  max-width:320px;
-  height:220px;
-  border-radius:8px;
-  border:2px solid #D4AF37;
-  overflow:hidden;
-  margin:0 auto 18px;
-  background:#F6EEFF;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-}
-.photo-container img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-}
+.photo-container{width:100%;max-width:300px;height:200px;border-radius:8px;border:2px solid #D4AF37;overflow:hidden;margin:0 auto 18px;background:#F6EEFF;}
+.photo-container img{width:100%;height:100%;object-fit:cover;}
 
-.names{
-  font-size:clamp(2.4rem,8vw,3.4rem);
-  color:#7D3C98;
-  font-style:italic;font-weight:bold;
-  margin-bottom:5px;line-height:1.2;
-}
+.names{font-size:clamp(2.4rem,8vw,3.2rem);color:#7D3C98;font-style:italic;font-weight:bold;margin-bottom:5px;line-height:1.2;}
 .and{color:#D4AF37;display:block;margin:4px 0;font-size:1.3rem;}
 .divider{display:flex;align-items:center;justify-content:center;gap:10px;margin:15px 0;}
 .d-line{width:70px;height:1px;background:linear-gradient(90deg,transparent,#D4AF37,transparent);}
@@ -101,69 +42,41 @@ html,body{
 .page.active{display:block;}
 
 .nav{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;gap:15px;z-index:10;}
-.nav button{
-  background:linear-gradient(135deg,#8E44AD,#D4AF37);
-  color:white;border:none;padding:10px 24px;
-  font-size:0.95rem;border-radius:6px;cursor:pointer;
-}
+.nav button{background:linear-gradient(135deg,#8E44AD,#D4AF37);color:white;border:none;padding:10px 24px;font-size:0.95rem;border-radius:6px;cursor:pointer;}
 </style>
 </head>
 <body>
 
-<!-- FLOWER DESIGN — dili square, tinuod nga petals -->
-<svg class="flower flower-tl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-  <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-  <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-  <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-  <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-  <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-  <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+<!-- BUWAK DESIGN — dili guba, walay itom -->
+<svg style="display:none;" id="f" viewBox="0 0 130 130" xmlns="http://www.w3.org/2000/svg">
+  <path d="M65 8 C85 23 98 43 88 63 C78 83 58 88 43 78 C28 68 23 48 33 28 C43 8 50 12 65 8Z" fill="#9B59B6"/>
+  <path d="M93 38 C113 53 118 78 103 98 C88 118 63 123 48 108 C33 93 38 68 53 48 C68 28 83 23 93 38Z" fill="#B977D1"/>
+  <path d="M33 48 C53 63 58 88 43 108 C28 128 3 133 -12 118 C-27 103 -22 78 -7 58 C8 38 23 33 33 48Z" fill="#9B59B6"/>
+  <path d="M43 18 C63 33 68 58 53 78 C38 98 13 103 -2 88 C-17 73 -12 48 3 28 C18 8 33 3 43 18Z" fill="#B977D1"/>
+  <circle cx="65" cy="65" r="15" fill="#D4AF37"/>
+  <circle cx="65" cy="65" r="8" fill="#F7DC6F"/>
 </svg>
 
-<!-- PAGE 1 -->
+<!-- PAHINA 1 -->
 <section class="page active" id="p1">
   <div class="bg"></div>
-  <svg class="flower flower-tr" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
-  <svg class="flower flower-bl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
-  <svg class="flower flower-br" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
+  <div class="flower flower-tl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
+  <div class="flower flower-tr"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
+  <div class="flower flower-bl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
+  <div class="flower flower-br"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
   <div class="frame-outer"></div>
   <div class="frame-inner"></div>
 
   <div class="content">
     <p class="top-text">Together with their families</p>
     <p class="invite-text">You are cordially invited to the wedding of</p>
-    <h1 class="names">
-      Ian
-      <span class="and">and</span>
-      Jevelyn
-    </h1>
+    <h1 class="names">Ian<span class="and">and</span>Jevelyn</h1>
     <div class="divider">
       <span class="d-line"></span>
       <span class="d-heart"></span>
       <span class="d-line"></span>
     </div>
-    <p class="bottom-msg">Swipe or tap Next to continue</p>
+    <p class="bottom-msg">Tap Next to continue</p>
   </div>
 
   <div class="nav">
@@ -172,53 +85,21 @@ html,body{
   </div>
 </section>
 
-<!-- PAGE 2 — naa na ang picture -->
+<!-- PAHINA 2 — NAA NA ANG PICTURE -->
 <section class="page" id="p2">
   <div class="bg"></div>
-  <svg class="flower flower-tl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
-  <svg class="flower flower-tr" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
-  <svg class="flower flower-bl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
-  <svg class="flower flower-br" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
+  <div class="flower flower-tl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
+  <div class="flower flower-tr"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
+  <div class="flower flower-bl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
+  <div class="flower flower-br"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
   <div class="frame-outer"></div>
   <div class="frame-inner"></div>
 
   <div class="content">
     <div class="photo-container">
-      <img src="couple.jpg" alt="Ian & Jevelyn">
+      <img src="https://i.postimg.cc/0QqZb3K/couple.jpg" alt="Ian & Jevelyn">
     </div>
-    <h1 class="names" style="font-size:clamp(2rem,6vw,2.8rem);">
-      Ian
-      <span class="and">and</span>
-      Jevelyn
-    </h1>
+    <h1 class="names" style="font-size:clamp(2rem,6vw,2.8rem);">Ian<span class="and">and</span>Jevelyn</h1>
     <div class="divider">
       <span class="d-line"></span>
       <span class="d-heart"></span>
@@ -232,41 +113,13 @@ html,body{
   </div>
 </section>
 
-<!-- PAGE 3 -->
+<!-- PAHINA 3 -->
 <section class="page" id="p3">
   <div class="bg"></div>
-  <svg class="flower flower-tl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
-  <svg class="flower flower-tr" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
-  <svg class="flower flower-bl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
-  <svg class="flower flower-br" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
+  <div class="flower flower-tl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
+  <div class="flower flower-tr"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
+  <div class="flower flower-bl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
+  <div class="flower flower-br"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
   <div class="frame-outer"></div>
   <div class="frame-inner"></div>
 
@@ -301,41 +154,13 @@ html,body{
   </div>
 </section>
 
-<!-- PAGE 4 -->
+<!-- PAHINA 4 -->
 <section class="page" id="p4">
   <div class="bg"></div>
-  <svg class="flower flower-tl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
-  <svg class="flower flower-tr" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
-  <svg class="flower flower-bl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
-  <svg class="flower flower-br" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
-    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
-    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
-    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
-    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
-    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
-    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
-  </svg>
+  <div class="flower flower-tl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
+  <div class="flower flower-tr"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
+  <div class="flower flower-bl"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
+  <div class="flower flower-br"><svg viewBox="0 0 130 130"><use href="#f"/></svg></div>
   <div class="frame-outer"></div>
   <div class="frame-inner"></div>
 
@@ -365,7 +190,7 @@ let totalPages = 4;
 function showPage(p){
   document.querySelectorAll('.page').forEach(x=>x.classList.remove('active'));
   document.getElementById('p'+p).classList.add('active');
-  currentPage=p;
+  currentPage = p;
 }
 function nextPage(){if(currentPage<totalPages)showPage(currentPage+1);}
 function prevPage(){if(currentPage>1)showPage(currentPage-1);}
