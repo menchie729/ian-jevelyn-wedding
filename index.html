@@ -21,34 +21,18 @@ html,body{
   z-index:0;
 }
 
-/* TINUOD nga FLOWER DESIGN sa 4 ka suok */
+/* TINUOD NGA FLOWER SA UGAT — dili square, dili emoji */
 .flower{
   position:absolute;
-  width:150px;
-  height:150px;
+  width:140px;
+  height:140px;
   z-index:8;
   pointer-events:none;
 }
-
-.flower-tl{
-  top:0;
-  left:0;
-}
-.flower-tr{
-  top:0;
-  right:0;
-  transform:scaleX(-1);
-}
-.flower-bl{
-  bottom:0;
-  left:0;
-  transform:scaleY(-1);
-}
-.flower-br{
-  bottom:0;
-  right:0;
-  transform:scaleX(-1) scaleY(-1);
-}
+.flower-tl{top:0;left:0;}
+.flower-tr{top:0;right:0;transform:scaleX(-1);}
+.flower-bl{bottom:0;left:0;transform:scaleY(-1);}
+.flower-br{bottom:0;right:0;transform:scaleX(-1) scaleY(-1);}
 
 .frame-outer{
   position:absolute;
@@ -77,8 +61,8 @@ html,body{
 
 .photo-container{
   width:100%;
-  max-width:260px;
-  height:190px;
+  max-width:320px;
+  height:220px;
   border-radius:8px;
   border:2px solid #D4AF37;
   overflow:hidden;
@@ -126,65 +110,48 @@ html,body{
 </head>
 <body>
 
-<!-- FLOWER SVG SA UPPER LEFT — tinuod nga flower design, dili emoji -->
-<svg class="flower flower-tl" viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-  <!-- Mga petals -->
-  <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-  <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-  <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-  <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-  <!-- Yellow center -->
-  <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-  <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-  <!-- Gamay nga highlights -->
-  <circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-  <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
+<!-- FLOWER DESIGN — dili square, tinuod nga petals -->
+<svg class="flower flower-tl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+  <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+  <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+  <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+  <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+  <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+  <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
 </svg>
 
 <!-- PAGE 1 -->
 <section class="page active" id="p1">
   <div class="bg"></div>
-  <div class="flower flower-tr">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-      <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-      <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-      <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-      <circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-      <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
-    </svg>
-  </div>
-  <div class="flower flower-bl">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-      <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-      <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-      <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-      <circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-      <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
-    </svg>
-  </div>
-  <div class="flower flower-br">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-      <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-      <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-      <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-      <circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-      <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
-    </svg>
-  </div>
+  <svg class="flower flower-tr" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
+  <svg class="flower flower-bl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
+  <svg class="flower flower-br" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
   <div class="frame-outer"></div>
   <div class="frame-inner"></div>
 
   <div class="content">
-    <p class="top-text"> Together with their families</p>
+    <p class="top-text">Together with their families</p>
     <p class="invite-text">You are cordially invited to the wedding of</p>
     <h1 class="names">
       Ian
@@ -205,57 +172,47 @@ html,body{
   </div>
 </section>
 
-<!-- PAGE 2 -->
+<!-- PAGE 2 — naa na ang picture -->
 <section class="page" id="p2">
   <div class="bg"></div>
-  <div class="flower flower-tl">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-      <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-      <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-      <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-      <circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-      <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
-    </svg>
-  </div>
-  <div class="flower flower-tr">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-      <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-      <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-      <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-      <circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-      <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
-    </svg>
-  </div>
-  <div class="flower flower-bl">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-      <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-      <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-      <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-      <1 circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-      <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
-    </svg>
-  </div>
-  <div class="flower flower-br">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z
-    </svg>
-  </div>
+  <svg class="flower flower-tl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
+  <svg class="flower flower-tr" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
+  <svg class="flower flower-bl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
+  <svg class="flower flower-br" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
   <div class="frame-outer"></div>
   <div class="frame-inner"></div>
 
   <div class="content">
     <div class="photo-container">
-      <img src="https://i.postimg.cc/0QqZb3Kt/couple.jpg" alt="Ian & Jevelyn">
+      <img src="couple.jpg" alt="Ian & Jevelyn">
     </div>
     <h1 class="names" style="font-size:clamp(2rem,6vw,2.8rem);">
       Ian
@@ -278,47 +235,38 @@ html,body{
 <!-- PAGE 3 -->
 <section class="page" id="p3">
   <div class="bg"></div>
-  <div class="flower flower-tl">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-      <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-      <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-      <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-      <circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-      <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
-    </svg>
-  </div>
-  <div class="flower flower-tr">
-    <svg viewBox="0 0 150 150" xmlns="http 2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-      <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-      <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-      <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-      <circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-      <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
-    </svg>
-  </div>
-  <div class="flower flower-bl">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-      <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-      <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-      <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-      <circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-      <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
-    </svg>
-  </div>
-  <div class="flower flower-br">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6 
-    </svg>
-  </div>
+  <svg class="flower flower-tl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
+  <svg class="flower flower-tr" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
+  <svg class="flower flower-bl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
+  <svg class="flower flower-br" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
   <div class="frame-outer"></div>
   <div class="frame-inner"></div>
 
@@ -356,48 +304,38 @@ html,body{
 <!-- PAGE 4 -->
 <section class="page" id="p4">
   <div class="bg"></div>
-  <div class="flower flower-tl">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-      <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-      <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-      <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-      <circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-      <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
-    </svg>
-  </div>
-  <div class="flower flower-tr">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-      <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-      <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-      <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-      <circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-      <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
-    </svg>
-  </div>
-  <div class="flower flower-bl">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 C100 125 75 130 60 115 C45 100 50 75 65 55 C80 35 95 30 105 45 Z" fill="#B977D1" opacity="0.85"/>
-      <path d="M45 55 C65 70 70 95 55 115 C40 135 15 140 0 125 C-15 110 -10 85 5 65 C20 45 35 40 45 55 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M55 25 C75 40 80 65 65 85 C50 105 25 110 10 95 C-5 80 0 55 15 35 C30 15 45 10 55 25 Z" fill="#B977D1" opacity="0.85"/>
-      <circle cx="75" cy="75" r="18" fill="#D4AF37"/>
-      <circle cx="75" cy="75" r="10" fill="#F7DC6F"/>
-      <circle cx="68" cy="68" r="3" fill="#fff" opacity="0.6"/>
-      <circle cx="82" cy="80" r="2.5" fill="#fff" opacity="0.5"/>
-    </svg>
-  </div>
-  <div class="flower flower-br">
-    <svg viewBox="0 0 150 150" xmlns="http://www.w3.org/2000/svg">
-      <path d="M75 15 C95 30 105 50 95 70 C85 90 65 95 50 85 C35 75 30 55 40 35 C50 15 60 20 75 15 Z" fill="#9B59B6" opacity="0.9"/>
-      <path d="M105 45 C125 60 130 85 115 105 
-    </svg>
-  </div>
+  <svg class="flower flower-tl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
+  <svg class="flower flower-tr" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
+  <svg class="flower flower-bl" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
+  <svg class="flower flower-br" viewBox="0 0 140 140" xmlns="http://www.w3.org/2000/svg">
+    <path d="M70 10 C90 25 105 45 95 65 C85 85 65 90 50 80 C35 70 30 50 40 30 C50 10 55 15 70 10Z" fill="#9B59B6"/>
+    <path d="M100 40 C120 55 125 80 110 100 C95 120 70 125 55 110 C40 95 45 70 60 50 C75 30 90 25 100 40Z" fill="#B977D1"/>
+    <path d="M40 50 C60 65 65 90 50 110 C35 130 10 135 -5 120 C-20 105 -15 80 0 60 C15 40 30 35 40 50Z" fill="#9B59B6"/>
+    <path d="M50 20 C70 35 75 60 60 80 C45 100 20 105 5 90 C-10 75 -5 50 10 30 C25 10 40 5 50 20Z" fill="#B977D1"/>
+    <circle cx="70" cy="70" r="16" fill="#D4AF37"/>
+    <circle cx="70" cy="70" r="9" fill="#F7DC6F"/>
+  </svg>
   <div class="frame-outer"></div>
   <div class="frame-inner"></div>
 
@@ -410,9 +348,7 @@ html,body{
     </div>
     <p class="bottom-msg" style="font-size:1.1rem;line-height:1.8;">
       "Two souls, one heart."<br><br>
-      We look forward to celebrating
-   
-      this special day with you!
+      We look forward to celebrating<br>this special day with you!
     </p>
     <p style="margin-top:20px;color:#D4AF37;font-style:italic;">— Ian & Jevelyn —</p>
   </div>
